@@ -135,9 +135,10 @@ html[lang="en"] .brand{text-transform:uppercase}
 /* Hero ------------------------------------------------------- */
 .hero{padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,72px); position:relative}
 .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(30px,5vw,64px); align-items:center}
-@media(max-width:940px){.hero-grid{grid-template-columns:1fr; gap:40px}}
-.hero h1{font-size:clamp(2.6rem,6.2vw,4.6rem)}
-html[lang="en"] .hero h1{font-size:clamp(2.9rem,7vw,5.2rem)}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr; gap:40px}.hero-visuals{min-height:390px;max-width:680px;margin-inline:auto}}
+@media(max-width:560px){.hero-visuals{min-height:310px;padding-inline-end:28px}.hero-phone{width:128px;bottom:-12px;border-radius:20px;padding:6px}.hero-phone .phone-screen{height:235px;border-radius:14px;padding:9px 7px;gap:7px}.hero-phone .phone-stat{padding:8px;border-radius:8px}.hero-phone .phone-stat strong{font-size:1.1rem}.hero-phone .phone-row{padding:6px;border-radius:7px}.hero-phone .phone-greeting{font-size:.66rem}.console{padding:15px;border-radius:15px}}
+.hero h1{font-size:clamp(2.35rem,5.4vw,4.15rem)}
+html[lang="en"] .hero h1{font-size:clamp(2.55rem,5.9vw,4.5rem)}
 .hero h1 .em{color:var(--ember)}
 .hero .lead{font-size:clamp(1.05rem,2vw,1.28rem); color:var(--ink-soft); max-width:40ch; margin-top:22px}
 .hero-actions{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap}
@@ -147,6 +148,7 @@ html[lang="en"] .hero h1{font-size:clamp(2.9rem,7vw,5.2rem)}
 .dot{width:7px; height:7px; border-radius:50%; background:var(--good); box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 22%, transparent)}
 
 /* Live console ----------------------------------------------- */
+.hero-visuals{position:relative;display:flex;align-items:center;min-height:430px;padding-inline-end:52px}.hero-visuals .console{width:100%}.hero-phone{position:absolute;inset-inline-end:-2px;bottom:-18px;width:174px;padding:8px;border:1px solid #303a49;border-radius:25px;background:#0b0d11;box-shadow:0 34px 60px -28px rgba(0,0,0,.8);transform:rotate(3deg);z-index:3}.phone-speaker{width:42px;height:4px;border-radius:999px;background:#303541;margin:1px auto 7px}.hero-phone .phone-screen{height:318px;border-radius:18px;background:#f7f8fa;overflow:hidden;color:#14171c;padding:13px 10px;display:flex;flex-direction:column;gap:10px}.hero-phone .phone-top{display:flex;align-items:center;gap:5px;font:800 .62rem var(--font-display);color:#14171c}.hero-phone .phone-top img{width:17px;height:17px;border-radius:5px}.hero-phone .phone-top i{width:5px;height:5px;border-radius:50%;background:#0063ff;margin-inline-start:auto}.hero-phone .phone-greeting{font:800 .78rem/1.2 var(--font-display);margin-top:5px}.hero-phone .phone-stat{background:#0063ff;color:#fff;border-radius:10px;padding:11px;display:grid;gap:5px}.hero-phone .phone-stat b{font-size:.58rem;opacity:.84}.hero-phone .phone-stat strong{font:800 1.45rem var(--font-mono)}.hero-phone .phone-stat span{height:4px;border-radius:99px;background:linear-gradient(90deg,#fff 82%,rgba(255,255,255,.25) 82%)}.hero-phone .phone-row{display:flex;align-items:center;justify-content:space-between;gap:6px;border:1px solid #dde2ea;border-radius:9px;padding:8px}.hero-phone .phone-row div{display:grid;gap:1px}.hero-phone .phone-row b{font-size:.58rem}.hero-phone .phone-row small{font-size:.48rem;color:#6d7480}.hero-phone .phone-row em{font-style:normal;font-size:.52rem;color:#0063ff;font-weight:800}
 .console{background:var(--hero); color:var(--hero-ink); border-radius:20px; padding:22px;
          border:1px solid var(--hero-line); box-shadow:0 40px 80px -40px rgba(0,0,0,.55); position:relative; overflow:hidden}
 .console::after{content:""; position:absolute; inset:0; pointer-events:none;

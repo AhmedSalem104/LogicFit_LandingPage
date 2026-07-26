@@ -8,7 +8,7 @@
 :root{
   /* PushPress-inspired LogicFit palette: Pacific blue, deep ink, cool neutrals. */
   --ink:#080808; --ink-soft:#1C1E22; --ink-mute:#6D7480;
-  --paper:#F5F7FA; --surface:#F8F9FB; --surface-2:#FFFFFF; --line:#DDE2EA;
+  --paper:#FFFFFF; --surface:#F8F9FB; --surface-2:#FFFFFF; --line:#DDE2EA;
   --ember:#0063FF; --ember-soft:#E7EBFF; --steel:#1C1E22; --good:#168A60;
   --hero:#080808; --hero-ink:#F5F7FA; --hero-line:#1C1E22;
   --font-display:"Cairo",system-ui,sans-serif;
@@ -38,7 +38,7 @@ html[lang="ar"]{
 }
 :root[data-theme="light"]{
   --ink:#080808; --ink-soft:#1C1E22; --ink-mute:#6D7480;
-  --paper:#F5F7FA; --surface:#F8F9FB; --surface-2:#FFFFFF; --line:#DDE2EA;
+  --paper:#FFFFFF; --surface:#F8F9FB; --surface-2:#FFFFFF; --line:#DDE2EA;
   --ember:#0063FF; --ember-soft:#E7EBFF; --steel:#1C1E22; --good:#168A60;
   --hero:#080808; --hero-ink:#F5F7FA; --hero-line:#1C1E22;
 }
@@ -71,6 +71,11 @@ img,svg{max-width:100%}
 .code::before{content:""; width:22px; height:1.5px; background:var(--ember); display:inline-block}
 
 /* Nav -------------------------------------------------------- */
+.announcement{background:#080f22;color:#f6f8ff;border-bottom:1px solid rgba(255,255,255,.1);font-size:.78rem}
+.announcement-in{min-height:42px;display:flex;align-items:center;justify-content:center;gap:16px;padding-block:7px}
+.announcement-in>span{color:#dce5ff;letter-spacing:.01em}
+.announcement-cta{display:inline-flex;align-items:center;gap:8px;background:#0063FF;color:#fff;border-radius:999px;padding:6px 13px;font-weight:700;font-size:.74rem;box-shadow:0 7px 18px -10px #0063FF;transition:transform .2s,background .2s,box-shadow .2s}
+.announcement-cta:hover{background:#2d7dff;transform:translateY(-1px);box-shadow:0 10px 22px -9px #0063FF}.announcement-cta span{transition:transform .2s}.announcement-cta:hover span{transform:translateX(3px)}
 nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.4) blur(14px);
     background:color-mix(in srgb, var(--surface-2) 90%, transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); box-shadow:0 8px 28px -24px rgba(8,8,8,.65)}
 
@@ -124,6 +129,7 @@ html[lang="en"] .brand{text-transform:uppercase}
         cursor:pointer; color:var(--ink); display:grid; place-items:center; font-size:1rem}
 @media(max-width:980px){.nav-links{gap:18px}.nav-links a{font-size:.8rem}}
 @media(max-width:760px){.nav-links{display:none}.nav-in{min-height:68px}.nav-cta .btn{padding-inline:14px}.brand{font-size:1.08rem}}
+@media(max-width:560px){.announcement-in{justify-content:space-between;gap:10px}.announcement-in>span{font-size:.7rem;line-height:1.35}.announcement-cta{font-size:.68rem;padding:6px 10px;white-space:nowrap}}
 
 /* Hero ------------------------------------------------------- */
 .hero{padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,72px); position:relative}

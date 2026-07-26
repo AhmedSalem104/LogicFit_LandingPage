@@ -276,6 +276,16 @@ html[lang="en"] .app-logo b{text-transform:uppercase}
 .role{border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--surface-2)}
 .role .rt{display:flex; align-items:center; gap:10px; margin-bottom:10px}
 .role .rt .rn{width:30px;height:30px;border-radius:8px;background:var(--ember-soft);color:var(--ember);display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;font-size:.8rem}
+.journey{background:var(--surface)}
+.journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.journey-card{padding:30px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface-2);min-height:260px;display:flex;flex-direction:column;align-items:flex-start;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.journey-card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--ember) 45%,var(--line));box-shadow:0 24px 50px -32px rgba(0,0,0,.45)}
+.tag-pill{display:inline-flex;align-items:center;border:1px solid color-mix(in srgb,var(--ember) 25%,var(--line));background:var(--ember-soft);color:var(--ember);border-radius:999px;padding:5px 11px;font:700 .7rem var(--font-mono);letter-spacing:.04em;text-transform:uppercase}
+.journey-card h3{font-size:1.35rem;margin:23px 0 10px}.journey-card p{color:var(--ink-soft);font-size:.94rem;max-width:34ch}.text-link{display:inline-flex;gap:8px;align-items:center;color:var(--ember);font-size:.86rem;font-weight:700;margin-top:auto;padding-top:20px}.text-link span{transition:transform .2s}.text-link:hover span{transform:translateX(4px)}
+.stories{padding:clamp(72px,9vw,132px) 0;background:var(--surface-2)}
+.stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}.story{padding:28px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);display:grid;gap:20px;min-height:250px}.story-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--ember);color:#fff;font:800 .78rem var(--font-mono);box-shadow:0 8px 18px -10px var(--ember)}.story p{font-size:1.04rem;color:var(--ink-soft);line-height:1.7}.story footer{display:grid;gap:2px;margin-top:auto}.story footer b{font-size:.88rem}.story footer span{font-size:.78rem;color:var(--ink-mute)}
+.faq-list{max-width:780px;margin:30px auto 0}.faq-list details{border-top:1px solid var(--line);padding:20px 0}.faq-list details:last-child{border-bottom:1px solid var(--line)}.faq-list summary{cursor:pointer;list-style:none;font-size:1.08rem;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:20px}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary::after{content:'+';color:var(--ember);font:700 1.3rem var(--font-mono)}.faq-list details[open] summary::after{content:'−'}.faq-list details p{color:var(--ink-soft);font-size:.94rem;max-width:62ch;padding-top:12px}
+@media(max-width:800px){.journey-grid,.stories-grid{grid-template-columns:1fr}.journey-card{min-height:230px}}
 .role h3{font-size:1.1rem; letter-spacing:.01em}
 .role p{font-size:.88rem; color:var(--ink-soft); margin-top:4px}
 

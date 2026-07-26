@@ -19,15 +19,14 @@
   <div class="wrap nav-in">
     <a class="brand" href="index.html"><img class="brand-logo" src="../assets/brand/logicfit-dumbbell.svg" alt="شعار LogicFit">LogicFit</a>
     <div class="nav-links">
-      <a href="#modules">ماذا يدير</a>
-      <a href="#coaching">التدريب</a>
-      <a href="#app">تطبيق أعضائك</a>
-      <a href="#roles">لكل دور</a>
+      <details class="nav-dropdown"><summary>المنتجات</summary><div class="nav-popover"><a href="#modules">التشغيل الأساسي</a><a href="#coaching">التدريب والمدربون</a><a href="#app">تطبيق الأعضاء</a></div></details>
+      <a href="#cta">الأسعار</a><a href="#stories">عملاؤنا</a><a href="#why">عن LogicFit</a>
+      <details class="nav-dropdown"><summary>المصادر</summary><div class="nav-popover"><a href="#resources">الأدلة والمقالات</a><a href="#faq-title">مركز المساعدة</a></div></details>
     </div>
     <div class="nav-cta">
       <a class="lang" href="../index.html" hreflang="en">English</a>
       <button class="toggle" id="themeBtn" aria-label="تبديل السمة" type="button">◐</button>
-      <a class="btn btn-primary" href="#cta">ابدأ الآن</a>
+      <a class="nav-signin" href="#cta">تسجيل الدخول</a><a class="btn btn-primary" href="#cta">احجز عرضًا</a>
     </div>
   </div>
 </nav>
@@ -295,7 +294,7 @@
   </div>
 </section>
 
-<section class="journey band" aria-labelledby="journey-title">
+<section id="why" class="journey band" aria-labelledby="journey-title">
   <div class="wrap">
     <div class="sec-head rv"><span class="code">فرق LogicFit</span><h2 id="journey-title">كل ما تحتاجه، متصل في مكان واحد.</h2><p>إيقاع تشغيل واضح ومريح للمالك والفريق والمدرب والعضو.</p></div>
     <div class="journey-grid">
@@ -306,11 +305,13 @@
   </div>
 </section>
 
-<section class="stories" aria-labelledby="stories-title">
+<section id="stories" class="stories" aria-labelledby="stories-title">
   <div class="wrap"><div class="sec-head rv"><span class="code">قصص أصحاب الجيمات</span><h2 id="stories-title">مصمم للعمل الحقيقي داخل الصالة.</h2><p>LogicFit يمنح الفرق النامية نظاما واضحا يمكن الاعتماد عليه كل يوم.</p></div>
     <div class="stories-grid"><article class="story rv"><div class="story-mark">LF</div><p>«أصبح موظف الاستقبال يرى نفس قصة العضو التي يراها المدرب. توقفنا عن مطاردة الأرقام وبدأنا نتحرك بناء عليها.»</p><footer><b>أحمد · Top Gym</b><span>مالك الجيم</span></footer></article><article class="story rv"><div class="story-mark">LF</div><p>«التطبيق يحمل هويتنا ويجعل العضو يشعر أنه ينتمي إلينا، وليس إلى منصة عامة.»</p><footer><b>سارة · Pulse Studio</b><span>مديرة التشغيل</span></footer></article><article class="story rv"><div class="story-mark">LF</div><p>«من أول عميل محتمل حتى التجديد، كل خطوة واضحة. هذا غيّر طريقة عمل الفريق.»</p><footer><b>عمر · Titan Club</b><span>مالك الجيم</span></footer></article></div>
   </div>
 </section>
+
+<section id="resources" class="resources" aria-labelledby="resources-title"><div class="wrap"><div class="sec-head rv"><span class="code">مصادر لأصحاب الجيمات</span><h2 id="resources-title">أفكار عملية لإدارة ونمو أفضل.</h2><p>أدلة مختصرة للمالكين والمديرين والمدربين لبناء جيم أقوى.</p></div><div class="resources-grid"><article class="resource-card rv"><span class="tag-pill">التشغيل</span><h3>كيف تجعل الاستقبال أكثر هدوءا</h3><p>حوّل الحضور والمتابعة والتجديدات إلى إيقاع يومي واضح وقابل للتكرار.</p><small>دليل LogicFit · ٦ دقائق</small></article><article class="resource-card rv"><span class="tag-pill">النمو</span><h3>املأ حصتك القادمة دون تخمين</h3><p>اربط العملاء المحتملين والطاقة والحضور والرسائل ليعرف فريقك الخطوة التالية.</p><small>دليل LogicFit · ٨ دقائق</small></article><article class="resource-card rv"><span class="tag-pill">التدريب</span><h3>نظام بسيط لتقدم الأعضاء</h3><p>امنح المدربين مكانا واحدا لبناء البرامج وإظهار التقدم الذي يصنعونه للأعضاء.</p><small>دليل LogicFit · ٥ دقائق</small></article></div></div></section>
 
 <section class="faq band" aria-labelledby="faq-title"><div class="wrap"><div class="sec-head rv"><span class="code">إجابات واضحة</span><h2 id="faq-title">بداية واضحة لفريقك.</h2></div><div class="faq-list"><details class="rv"><summary>هل أستطيع البدء بفرع واحد ثم التوسع؟</summary><p>نعم. ابدأ بموقع واحد ثم أضف الفروع والأدوار والصلاحيات من الحساب نفسه.</p></details><details class="rv"><summary>هل سيحمل تطبيق الأعضاء هوية الجيم؟</summary><p>نعم. الشعار والألوان والاسم وتجربة الأعضاء جاهزة للعمل بنظام White-label.</p></details><details class="rv"><summary>هل يمكن للفريق تجربة LogicFit قبل الالتزام؟</summary><p>ابدأ بالتجربة المجانية أو احجز عرضا مخصصا لطريقة تشغيل جيمك.</p></details></div></div></section>
 

@@ -51,7 +51,9 @@ Then visit <http://localhost:8000/> (English) or <http://localhost:8000/ar/> (Ar
 
 | Token | Light | Dark | Role |
 | --- | --- | --- | --- |
-| `--ember` | `#F0400F` | `#FF5A2A` | The single bold accent (energy / effort) |
+| `--ember` | `#0063FF` | `#0063FF` | Pacific-blue primary accent used for CTAs and interaction states |
+| `--hero` | `#080808` | `#080808` | Deep ink foundation for console and proof sections |
+| `--ember-soft` | `#E7EBFF` | `#182C59` | Blue-tinted surfaces for badges and feature icons |
 | `--ink` | `#14171C` | `#EDEFF2` | Primary text |
 | `--paper` | `#ECEEF1` | `#0E1116` | Page ground (steel-biased neutral) |
 | `--steel` | `#2E6E8E` | `#6FB6D6` | Data / chart tone |

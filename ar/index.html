@@ -67,6 +67,10 @@
   </div>
 </header>
 
+<section class="proof-strip" aria-label="لماذا تختار فرق الجيم LogicFit">
+  <div class="wrap proof-in"><span class="proof-label">مصمم لفرق الجيم الجادة</span><div class="proof-items"><span>صالات مستقلة</span><span>مشغلو الفروع المتعددة</span><span>فرق التدريب</span><span>علامات تركز على الأعضاء</span></div></div>
+</section>
+
 <section class="band">
   <div class="wrap">
     <div class="sec-head rv">
@@ -298,13 +302,13 @@
       <span class="code" style="justify-content:center">جاهز؟</span>
       <h2 style="margin-top:16px">شغّل جيمك من مكان واحد.</h2>
       <p>ابدأ تجربة مجانية ١٤ يوم — فعّل جيمك، أضف فرعك الأول، وأطلق تطبيق أعضائك اليوم.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#">ابدأ التجربة المجانية →</a>
-        <a class="btn btn-ghost" href="#">احجز عرضًا توضيحيًا</a>
-      </div>
+      <form class="lead-form" id="trialForm" novalidate><label class="sr-only" for="trialEmail">البريد الإلكتروني للعمل</label><input id="trialEmail" name="email" type="email" autocomplete="email" placeholder="البريد الإلكتروني للعمل" required><button class="btn btn-primary" type="submit">ابدأ التجربة المجانية →</button><small class="form-note">بدون بطاقة ائتمان · نرد خلال يوم عمل</small><span class="form-status" aria-live="polite"></span></form>
+      <div class="hero-actions"><button class="btn btn-ghost" type="button" data-open-demo>احجز عرضًا توضيحيًا</button></div>
     </div>
   </div>
 </section>
+
+<div class="modal" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoTitle"><div class="modal-backdrop" data-close-demo></div><div class="modal-card"><button class="modal-close" type="button" aria-label="إغلاق" data-close-demo>×</button><span class="code">تحدث مع المبيعات</span><h2 id="demoTitle">شاهد LogicFit داخل جيمك.</h2><p>أخبرنا قليلًا عن نشاطك وسنرتب لك عرضًا مركزًا.</p><form class="demo-form" id="demoForm" novalidate><label>اسم الجيم<input name="gym" type="text" required></label><label>البريد الإلكتروني<input name="email" type="email" required></label><label>عدد الفروع<select name="branches"><option>١</option><option>٢–٥</option><option>٦–٢٠</option><option>٢٠+</option></select></label><button class="btn btn-primary" type="submit">اطلب العرض</button><span class="form-status" aria-live="polite"></span></form></div></div>
 
 <footer>
   <div class="wrap foot-in">

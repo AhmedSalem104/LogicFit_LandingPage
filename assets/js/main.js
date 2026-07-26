@@ -140,4 +140,37 @@
       if (appInitial) appInitial.textContent = sw.getAttribute('data-i');
     });
   });
+
+  /* Conversion forms: separate self-serve trial from sales demo. */
+  function validEmail(value) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim()); }
+  function setStatus(form, message, ok) {
+    var status = form && form.querySelector('.form-status');
+    if (!status) return;
+    status.textContent = message;
+    status.className = 'form-status ' + (ok ? 'ok' : 'error');
+  }
+  var trial = document.getElementById('trialForm');
+  if (trial) trial.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var email = trial.querySelector('[name="email"]').value;
+    if (!validEmail(email)) { setStatus(trial, isAr ? 'أدخل بريدًا إلكترونيًا صحيحًا.' : 'Enter a valid work email.', false); return; }
+    localStorage.setItem('logicfit_trial_lead', JSON.stringify({ email: email.trim(), createdAt: new Date().toISOString() }));
+    setStatus(trial, isAr ? 'تم استلام طلبك. سنرسل لك خطوات البدء.' : 'Request received. We will send your next steps.', true);
+    trial.reset();
+  });
+  var demo = document.getElementById('demoModal');
+  function closeDemo() { if (!demo) return; demo.classList.remove('open'); demo.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+  document.querySelectorAll('[data-open-demo]').forEach(function (button) { button.addEventListener('click', function () { if (!demo) return; demo.classList.add('open'); demo.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; var first = demo.querySelector('input'); if (first) first.focus(); }); });
+  document.querySelectorAll('[data-close-demo]').forEach(function (el) { el.addEventListener('click', closeDemo); });
+  document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeDemo(); });
+  var demoForm = document.getElementById('demoForm');
+  if (demoForm) demoForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var email = demoForm.querySelector('[name="email"]').value;
+    var gym = demoForm.querySelector('[name="gym"]').value.trim();
+    if (!gym || !validEmail(email)) { setStatus(demoForm, isAr ? 'أكمل اسم الجيم والبريد الصحيح.' : 'Add your gym name and a valid email.', false); return; }
+    localStorage.setItem('logicfit_demo_lead', JSON.stringify({ gym: gym, email: email.trim(), branches: demoForm.querySelector('[name="branches"]').value, createdAt: new Date().toISOString() }));
+    setStatus(demoForm, isAr ? 'تم إرسال طلب العرض. سيتواصل معك فريقنا.' : 'Demo request sent. Our team will be in touch.', true);
+    demoForm.reset();
+  });
 })();

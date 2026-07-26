@@ -80,6 +80,13 @@ The visual proof section uses male-only gym photography, lazy loading, responsiv
 cropping, hover transitions, and accessible alternative text. The same section is
 translated in `ar/index.html` and uses the shared RTL layout.
 
+The conversion flow is intentionally split: **Start free trial** uses a lightweight
+work-email capture form, while **Book a demo** opens a dedicated sales modal with gym
+name, email, and branch count. Both forms validate inline, keep the page in place, and
+store a local lead receipt for the next integration step (`logicfit_trial_lead` and
+`logicfit_demo_lead`). Replace that storage call with the production lead endpoint when
+the CRM contract is enabled.
+
 ## Accessibility and performance
 
 - Semantic sections, labelled navigation, descriptive image `alt` text, and keyboard-focusable controls.

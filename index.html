@@ -67,6 +67,10 @@
   </div>
 </header>
 
+<section class="proof-strip" aria-label="Why gym teams choose LogicFit">
+  <div class="wrap proof-in"><span class="proof-label">Built for serious gym teams</span><div class="proof-items"><span>Independent gyms</span><span>Multi-branch operators</span><span>Coaching teams</span><span>Member-first brands</span></div></div>
+</section>
+
 <section class="band">
   <div class="wrap">
     <div class="sec-head rv">
@@ -298,13 +302,13 @@
       <span class="code" style="justify-content:center">Ready?</span>
       <h2 style="margin-top:16px">Run your gym from one place.</h2>
       <p>Start a 14-day free trial — activate your gym, add your first branch, and launch your members' app today.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#">Start free trial →</a>
-        <a class="btn btn-ghost" href="#">Book a demo</a>
-      </div>
+      <form class="lead-form" id="trialForm" novalidate><label class="sr-only" for="trialEmail">Work email</label><input id="trialEmail" name="email" type="email" autocomplete="email" placeholder="Work email" required><button class="btn btn-primary" type="submit">Start free trial →</button><small class="form-note">No credit card · We reply within one business day</small><span class="form-status" aria-live="polite"></span></form>
+      <div class="hero-actions"><button class="btn btn-ghost" type="button" data-open-demo>Book a demo</button></div>
     </div>
   </div>
 </section>
+
+<div class="modal" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoTitle"><div class="modal-backdrop" data-close-demo></div><div class="modal-card"><button class="modal-close" type="button" aria-label="Close" data-close-demo>×</button><span class="code">Talk to sales</span><h2 id="demoTitle">See LogicFit in your gym.</h2><p>Tell us a little about your operation and we will arrange a focused walkthrough.</p><form class="demo-form" id="demoForm" novalidate><label>Gym name<input name="gym" type="text" required></label><label>Work email<input name="email" type="email" required></label><label>Branches<select name="branches"><option>1</option><option>2–5</option><option>6–20</option><option>20+</option></select></label><button class="btn btn-primary" type="submit">Request my demo</button><span class="form-status" aria-live="polite"></span></form></div></div>
 
 <footer>
   <div class="wrap foot-in">

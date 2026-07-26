@@ -10,20 +10,20 @@
   --paper:#ECEEF1; --surface:#F7F8FA; --surface-2:#FFFFFF; --line:#D9DDE3;
   --ember:#F0400F; --ember-soft:#FDE7DF; --steel:#2E6E8E; --good:#1F9D6B;
   --hero:#12151B; --hero-ink:#EDEFF2; --hero-line:#2A303A;
-  --font-display:system-ui,sans-serif;
-  --font-body:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-display:"Cairo",system-ui,sans-serif;
+  --font-body:"Cairo",system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --font-mono:"Cascadia Code",ui-monospace,"SFMono-Regular",Consolas,monospace;
   --r:14px; --maxw:1180px;
 }
 
 /* Language-specific typography ------------------------------- */
 html[lang="en"]{
-  --font-display:"Oswald","Arial Narrow","Roboto Condensed","Helvetica Neue",Impact,sans-serif;
-  --font-body:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-display:"Cairo",system-ui,sans-serif;
+  --font-body:"Cairo",system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 html[lang="ar"]{
-  --font-display:"Noto Kufi Arabic","Segoe UI",Tahoma,sans-serif;
-  --font-body:"Segoe UI",Tahoma,"Noto Sans Arabic",Arial,sans-serif;
+  --font-display:"Cairo",system-ui,sans-serif;
+  --font-body:"Cairo",Tahoma,"Noto Sans Arabic",Arial,sans-serif;
 }
 
 /* Theme tokens ----------------------------------------------- */
@@ -98,6 +98,8 @@ nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.4) blur(10px)
 @media(max-width:680px){.proof-in{padding-block:18px;align-items:flex-start;flex-direction:column}.proof-items{justify-content:flex-start}.lead-form{grid-template-columns:1fr}.lead-form .btn{width:100%}.modal-card{padding:24px 20px}}
 .nav-in{display:flex; align-items:center; justify-content:space-between; height:66px}
 .brand{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:800; font-size:1.25rem; letter-spacing:.01em}
+.brand-logo{width:32px;height:32px;display:block;border-radius:9px;box-shadow:0 5px 16px -6px var(--ember)}
+.app-logo-mark{width:24px;height:24px;border-radius:7px;display:block;flex:0 0 auto}
 html[lang="en"] .brand{text-transform:uppercase}
 .mark{width:30px; height:30px; border-radius:8px; background:var(--ember); position:relative; flex:0 0 auto;
       box-shadow:0 4px 14px -4px var(--ember)}
@@ -131,6 +133,7 @@ html[lang="en"] .hero h1{font-size:clamp(2.9rem,7vw,5.2rem)}
 .hero-actions{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap}
 .hero-note{margin-top:20px; font-size:.85rem; color:var(--ink-mute); display:flex; gap:16px; flex-wrap:wrap}
 .hero-note span{display:flex; gap:7px; align-items:center}
+.hero-benefits{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;color:var(--ink-soft);font-size:.78rem}.hero-benefits span{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:color-mix(in srgb,var(--surface-2) 65%,transparent)}.hero-benefits b{color:var(--ember);font-family:var(--font-mono);font-size:.7rem}
 .dot{width:7px; height:7px; border-radius:50%; background:var(--good); box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 22%, transparent)}
 
 /* Live console ----------------------------------------------- */

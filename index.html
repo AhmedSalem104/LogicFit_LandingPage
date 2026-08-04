@@ -3,349 +3,275 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogicFit — Gym Management Platform</title>
-  <meta name="description" content="Run your entire gym from one control panel — members, training, nutrition, attendance, checkout, payroll and reports, plus a white-label app that carries your gym's name.">
+  <title>LogicFit - Smarter Gym Operations</title>
+  <meta name="description" content="LogicFit connects members, subscriptions, attendance, coaching, nutrition, reporting, and a branded member app in one gym operating platform.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230063FF'/%3E%3Cpath d='M18 30h12v40H18zM30 22h10v56H30zM40 42h20v16H40zM60 22h10v56H60zM70 30h12v40H70z' fill='white'/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/figma-next/logo-light.png">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('logicfit_theme');
+        var theme = (saved === 'dark' || saved === 'light') ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <header class="hero-shell" id="home">
+    <nav class="nav-v2" aria-label="Primary navigation">
+      <div class="nav-controls">
+        <a class="nav-language" href="ar/index.html" hreflang="ar">AR</a>
+        <a class="nav-login" href="#start">Log in</a>
+        <a class="btn btn-primary btn-nav" href="#start">Book a demo</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" data-theme-toggle data-label-dark="Switch to dark theme" data-label-light="Switch to light theme">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
 
-<div class="announcement" role="region" aria-label="LogicFit announcement"><div class="wrap announcement-in"><span>Want to hang out? See what’s coming up for gym owners.</span><a class="announcement-cta" href="#stories">See upcoming events <span aria-hidden="true">→</span></a></div></div>
-
-<nav>
-  <div class="wrap nav-in">
-    <a class="brand" href="index.html"><img class="brand-logo" src="assets/brand/logicfit-dumbbell.svg" alt="LogicFit logo">LogicFit</a>
-    <div class="nav-links">
-      <details class="nav-dropdown"><summary>Products</summary><div class="nav-popover"><a href="#modules">Core operations</a><a href="#coaching">Train &amp; coach</a><a href="#app">Members' app</a></div></details>
-      <a href="#cta">Pricing</a><a href="#stories">Customers</a><a href="#why">About</a>
-      <details class="nav-dropdown"><summary>Resources</summary><div class="nav-popover"><a href="#resources">Guides &amp; insights</a><a href="#faq-title">Help center</a></div></details>
-    </div>
-    <div class="nav-cta">
-      <a class="lang" href="ar/index.html" hreflang="ar">العربية</a>
-      <button class="toggle" id="themeBtn" aria-label="Toggle theme" type="button">◐</button>
-      <a class="nav-signin" href="#cta">Sign in</a><a class="btn btn-primary" href="#cta">Book a demo</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="code">All-in-One Gym Management Software</span>
-      <h1>Unlock the<br><span class="em">Power of Your</span><br>Fitness Business</h1>
-      <p class="lead">Automate, streamline, and grow your fitness business with hassle-free software built by <strong>gym owners, for gym owners.</strong></p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#cta">Schedule a demo <span aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="#modules">See everything it runs</a>
-      </div>
-      <div class="hero-note">
-        <span><span class="dot"></span>No credit card</span>
-        <span><span class="dot"></span>Multiple branches</span>
-        <span><span class="dot"></span>Role-based access</span>
-      </div>
-      <div class="hero-benefits" aria-label="Key LogicFit benefits"><span><b>01</b> One member record</span><span><b>02</b> Live revenue &amp; attendance</span><span><b>03</b> Your branded member app</span></div>
-    </div>
-
-    <div class="hero-visuals rv"><div class="console" aria-hidden="true"><div class="mock-sidebar"><div class="mock-brand"><img src="assets/brand/logicfit-dumbbell.svg" alt=""><b>LogicFit Core</b></div><div class="mock-nav active">▦ <span>Dashboard</span></div><div class="mock-nav">♙ <span>People</span></div><div class="mock-nav">◌ <span>Communicate</span></div><div class="mock-lines"><i></i><i></i><i></i></div><div class="mock-user"><span>AR</span><small>Alex Reed<br>Main branch</small></div></div><div class="mock-dashboard-label"><b>My Day</b><small>Financial Report</small></div>
-      <div class="console-top">
-        <span class="t">Gold Gym · Today</span>
-        <span class="live"><span class="dot"></span>LIVE</span>
-      </div>
-      <div class="stat-row">
-        <div class="stat"><div class="k">Active members</div><div class="v" data-count="1248">0</div><div class="trend">▲ 6% this month</div></div>
-        <div class="stat"><div class="k">Check-ins today</div><div class="v" data-count="342">0</div><div class="trend">via QR gate</div></div>
-        <div class="stat"><div class="k">Revenue MTD</div><div class="v" data-count="284" data-prefix="$" data-suffix="k">0</div><div class="trend">▲ 12%</div></div>
-      </div>
-      <div class="chart-card">
-        <div class="head"><span class="k">Subscription growth · 6 months</span><span class="v mono">+38%</span></div>
-        <canvas id="spark" width="440" height="70"></canvas>
-      </div>
-      <div class="gate">
-        <span class="qr"></span>
-        <div><div style="font-weight:600">Michael Reed · Card 0001-2345</div><div class="mono" style="font-size:.75rem;color:#8892A0">08:59 · Main branch</div></div>
-        <span class="grant">● Access granted</span>
-      </div>
-    </div><div class="hero-phone" aria-hidden="true"><div class="phone-speaker"></div><div class="phone-screen"><div class="phone-top"><img src="assets/brand/logicfit-dumbbell.svg" alt=""><span>LogicFit</span><i></i></div><div class="phone-greeting">Good morning, Alex</div><div class="phone-actions"><div><b>⌖</b><span>Check-in</span></div><div><b>◷</b><span>Memberships</span></div><div><b>▣</b><span>Buy products</span></div></div><div class="phone-quick"><div><b>＋</b><span>Sign-up</span></div><div class="renew"><b>↻</b><span>Renew</span></div></div><div class="phone-brand-mark">LogicFit</div></div></div></div>
-  </div>
-</header>
-
-<section class="proof-strip" aria-label="Why gym teams choose LogicFit">
-  <div class="wrap proof-in"><span class="proof-label">Built for serious gym teams</span><div class="proof-items"><span>Independent gyms</span><span>Multi-branch operators</span><span>Coaching teams</span><span>Member-first brands</span></div></div>
-</section>
-
-<section class="value-strip" aria-label="LogicFit value pillars"><div class="wrap value-grid"><article><span class="value-icon">01</span><h3>Fill the floor</h3><p>Capture leads, memberships, renewals, and attendance without scattered tools.</p></article><article><span class="value-icon">02</span><h3>Protect revenue</h3><p>Connect plans, invoices, payments, POS, expenses, and reports in real time.</p></article><article><span class="value-icon">03</span><h3>Coach better</h3><p>Build programs, nutrition, sessions, and measurable progress for every member.</p></article><article><span class="value-icon">04</span><h3>Own the brand</h3><p>Give members an app with your colors, logo, name, and experience.</p></article></div></section>
-
-<section class="band">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="code">The problem</span>
-      <h2>Ten tools. None of them talk.</h2>
-      <p>A busy gym runs on a dozen systems that don't connect — scattered numbers, wasted hours, and a member experience that feels amateur. LogicFit pulls it all into one place.</p>
-    </div>
-    <div class="split">
-      <div class="chaos rv">
-        <div class="col-label">The old way</div>
-        <ul class="tool-list">
-          <li><span class="x">✕</span> A spreadsheet for members, a notebook at the desk</li>
-          <li><span class="x">✕</span> WhatsApp for training and meal plans</li>
-          <li><span class="x">✕</span> A separate register that doesn't know who the member is</li>
-          <li><span class="x">✕</span> Payroll and commissions on paper</li>
-          <li><span class="x">✕</span> Nobody knows the real numbers at month-end</li>
-        </ul>
-      </div>
-      <div class="order rv">
-        <div class="col-label">With LogicFit</div>
-        <ul class="tool-list">
-          <li><span class="c">✓</span> One profile per member — plan, attendance, progress, purchases</li>
-          <li><span class="c">✓</span> Coaches build programs and nutrition inside the system</li>
-          <li><span class="c">✓</span> Checkout knows the member and links every sale to them</li>
-          <li><span class="c">✓</span> Payroll and commissions calculated automatically</li>
-          <li><span class="c">✓</span> A live report for every branch, any moment</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="modules">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="code">One system · everything inside</span>
-      <h2>Every part of the gym, run from here.</h2>
-      <p>From a new member's first visit to closing the books at month-end — nine connected systems working as one.</p>
-    </div>
-    <div class="modules">
-      <div class="mod rv"><div class="num">01</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M15 11a3 3 0 100-6M2 21v-1a5 5 0 015-5h4a5 5 0 015 5v1M17 15h1a4 4 0 014 4v2"/></svg></div>
-        <h3>Membership &amp; Subscriptions</h3>
-        <p>A full profile per member, subscription plans, freezes, a wallet, and QR membership cards.</p>
-        <div class="tags"><span>Members</span><span>Subscriptions</span><span>Wallet</span></div>
-      </div>
-      <div class="mod rv"><div class="num">02</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7v10M18 7v10M3 9v6M21 9v6M6 12h12"/></svg></div>
-        <h3>Training &amp; Workouts</h3>
-        <p>Coaches build detailed programs, track sessions, weights, and every personal record per trainee.</p>
-        <div class="tags"><span>Programs</span><span>Sessions</span><span>Exercise library</span></div>
-      </div>
-      <div class="mod rv"><div class="num">03</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-        <h3>Nutrition &amp; Body Metrics</h3>
-        <p>Meal plans by calories and macros, plus full InBody measurements — body fat, muscle mass, progress photos.</p>
-        <div class="tags"><span>Meal plans</span><span>InBody</span><span>Foods</span></div>
-      </div>
-      <div class="mod rv"><div class="num">04</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
-        <h3>Attendance &amp; QR Gate</h3>
-        <p>Scan-to-enter check-in, instant attendance, access blocked when a subscription lapses, and a full log per branch.</p>
-        <div class="tags"><span>Check-in</span><span>QR gate</span><span>Cards</span></div>
-      </div>
-      <div class="mod rv"><div class="num">05</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
-        <h3>Classes &amp; Appointments</h3>
-        <p>Group classes, recurring schedules, booking and waitlists, and one-on-one training appointments.</p>
-        <div class="tags"><span>Classes</span><span>Bookings</span><span>Appointments</span></div>
-      </div>
-      <div class="mod rv"><div class="num">06</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12.5A2 2 0 009.5 17H18a2 2 0 002-1.6L21.5 8H6"/></svg></div>
-        <h3>Point of Sale &amp; Inventory</h3>
-        <p>A register tied to members, products and supplements, stock movement, suppliers, and purchase orders.</p>
-        <div class="tags"><span>POS</span><span>Inventory</span><span>Suppliers</span></div>
-      </div>
-      <div class="mod rv"><div class="num">07</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
-        <h3>Invoicing &amp; Finance</h3>
-        <p>Invoices and payments, expenses, discount coupons, taxes, and a wallet per member — every cent documented.</p>
-        <div class="tags"><span>Invoices</span><span>Expenses</span><span>Coupons</span></div>
-      </div>
-      <div class="mod rv"><div class="num">08</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
-        <h3>Staff &amp; Payroll</h3>
-        <p>Shifts, leave, coach commissions, and payroll runs calculated automatically.</p>
-        <div class="tags"><span>Shifts</span><span>Commissions</span><span>Payroll</span></div>
-      </div>
-      <div class="mod rv"><div class="num">09</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
-        <h3>Branches &amp; Reporting</h3>
-        <p>Run multiple branches from one account — rooms, equipment, maintenance, and live dashboards per branch.</p>
-        <div class="tags"><span>Branches</span><span>Equipment</span><span>Dashboards</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="coaching" class="band">
-  <div class="wrap feat">
-    <div class="rv">
-      <span class="code">Training</span>
-      <h2 style="font-size:clamp(2rem,4.4vw,3rem)">Training that shows results — in numbers.</h2>
-      <p style="color:var(--ink-soft); margin-top:16px; font-size:1.05rem">Coaches don't scribble the program on a page that gets lost. They build it inside LogicFit and track every rep and every measurement — so members see their progress, and coaches see their impact.</p>
-      <ul class="feat-list">
-        <li><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><b>Programs built once, cloned to any trainee</b><p>A routine per day, exercises with sets, reps and rest, and supersets.</p></div></li>
-        <li><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></span>
-          <div><b>Sessions logged by weight and reps</b><p>Total volume load, with personal records flagged automatically.</p></div></li>
-        <li><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M12 8V4M6 20v-4M6 12V4M18 20v-8M18 8V4"/></svg></span>
-          <div><b>InBody measurements on a timeline</b><p>Weight, body fat, muscle mass, and front/side/back photos — progress you can see.</p></div></li>
-      </ul>
-    </div>
-
-    <div class="progress-card rv">
-      <div class="pc-head">
-        <div class="who"><div class="avatar">M</div><div><b>Michael Reed</b><span>12 weeks · Coach Adam</span></div></div>
-        <span class="pr-badge">New PR · Bench 90kg</span>
-      </div>
-      <div class="metrics">
-        <div class="metric"><div class="k">Weight</div><div class="v">80<span class="u">kg</span></div><div class="d down">▼ 6.2</div></div>
-        <div class="metric"><div class="k">Body fat</div><div class="v">18<span class="u">%</span></div><div class="d up">▼ 5.4</div></div>
-        <div class="metric"><div class="k">Muscle</div><div class="v">36<span class="u">kg</span></div><div class="d up">▲ 2.1</div></div>
-      </div>
-      <div class="bars">
-        <div class="bar" style="height:40%"><span>3.6k</span></div>
-        <div class="bar" style="height:52%"><span>4.1k</span></div>
-        <div class="bar" style="height:48%"><span>3.9k</span></div>
-        <div class="bar" style="height:66%"><span>4.6k</span></div>
-        <div class="bar" style="height:78%"><span>5.0k</span></div>
-        <div class="bar" style="height:100%"><span>5.4k</span></div>
-      </div>
-      <div class="bars-x"><span>W1</span><span>W3</span><span>W5</span><span>W7</span><span>W9</span><span>W12</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="people-section" aria-labelledby="people-title">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="code">Built around real people</span>
-      <h2 id="people-title">A better gym experience starts with your team.</h2>
-      <p>Give coaches, members, and staff one clear place to move every goal forward.</p>
-    </div>
-    <div class="people-grid">
-      <figure class="people-card people-card-large rv"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=82" alt="Man training with a barbell in a modern gym" loading="lazy"><figcaption><b>Train with intent.</b><span>Programs, sessions, and progress in one view.</span></figcaption></figure>
-      <figure class="people-card rv"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=82" alt="Man using gym equipment" loading="lazy"><figcaption><b>Run the floor.</b><span>Every branch, class, and check-in connected.</span></figcaption></figure>
-      <figure class="people-card rv"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=82" alt="Man doing a functional workout" loading="lazy"><figcaption><b>See progress.</b><span>Turn effort into measurable member results.</span></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="app" class="wl">
-  <div class="wrap wl-grid">
-    <div class="rv">
-      <span class="code">White-label</span>
-      <h2>Your app. Your name.</h2>
-      <p>Your members don't open "LogicFit" — they open your gym's app, with your logo, your colors, your own domain. Their programs, subscription, classes, and progress, all in a place that carries your name.</p>
-      <div class="swatches" role="group" aria-label="Choose a brand color">
-        <button class="sw" type="button" data-c="#0063FF" data-name="LogicFit Blue" data-i="L" style="background:#0063FF" aria-pressed="true" aria-label="Pacific blue"></button>
-        <button class="sw" type="button" data-c="#2563EB" data-name="Titan Club" data-i="T" style="background:#2563EB" aria-pressed="false" aria-label="Blue"></button>
-        <button class="sw" type="button" data-c="#1F9D6B" data-name="Pulse Fit" data-i="P" style="background:#1F9D6B" aria-pressed="false" aria-label="Green"></button>
-        <button class="sw" type="button" data-c="#7C3AED" data-name="Nova Gym" data-i="N" style="background:#7C3AED" aria-pressed="false" aria-label="Purple"></button>
-        <button class="sw" type="button" data-c="#E11D74" data-name="Flex Studio" data-i="F" style="background:#E11D74" aria-pressed="false" aria-label="Pink"></button>
-      </div>
-      <p class="wl-hint">Try it: tap a color and watch your members' app change. →</p>
-    </div>
-
-    <div class="phone rv">
-      <div class="phone-screen">
-        <div class="app-top">
-          <div class="row">
-            <div class="app-logo"><img class="app-logo-mark" src="assets/brand/logicfit-dumbbell.svg" alt=""><span class="lg" id="appInitial">G</span><b id="appName">Gold Gym</b></div>
-            <span class="mono" style="font-size:.75rem;opacity:.85">☰</span>
-          </div>
-          <div class="app-greet">Good evening 👋<div class="big">Michael Reed</div></div>
+      <div class="brand-links">
+        <a class="brand-logo" href="#home" aria-label="LogicFit home">
+          <img class="logo-light" src="assets/figma-next/logo-light.png" alt="LogicFit">
+          <img class="logo-dark" src="assets/figma-next/logo-dark.png" alt="LogicFit">
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="#platform">Platform</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#success">Success</a>
+          <a href="#resources">Resources</a>
         </div>
-        <div class="app-body">
-          <div class="app-card">
-            <div class="lbl"><span>Today's program · Push Day</span><span class="go">Open ›</span></div>
-            <div class="val">6 exercises · 24 sets</div>
-            <div class="app-prog" style="margin-top:10px"><i></i></div>
-          </div>
-          <div class="app-mini">
-            <div class="m"><div class="n">4</div><div class="t">Days this week</div></div>
-            <div class="m"><div class="n">18%</div><div class="t">Body fat</div></div>
-          </div>
-          <div class="app-card">
-            <div class="lbl"><span>Next class</span><span class="go">Book ›</span></div>
-            <div class="val">Morning Yoga · 8:00 AM</div>
-          </div>
+      </div>
+
+      <button class="menu-button" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" data-menu>
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <section class="hero-canvas">
+      <div class="hero-media rv">
+        <img src="assets/figma-next/hero-athlete.png" alt="Athlete training inside a gym">
+        <div class="media-scrim"></div>
+        <div class="image-caption">
+          <span>A stronger space for results</span>
+          <strong>Every move is tracked. Every result is visible.</strong>
         </div>
-        <div class="app-nav"><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="floating-metric rv">
+        <strong data-count="1248" data-count-prefix="+">+1,248</strong>
+        <span>active members this month</span>
+      </div>
+
+      <div class="hero-copy rv">
+        <p class="section-kicker">LOGICFIT - smarter gym operations</p>
+        <h1>Every fitness journey<br>in one place.</h1>
+        <p>From a member's first check-in to the last report of the day, LogicFit makes operations easier, faster, and clearer for your team.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-large" href="#start">Start free trial</a>
+          <a class="btn btn-secondary btn-large" href="#platform">Watch platform tour</a>
+        </div>
+        <small>No credit card • Arabic setup and support • Multi-branch ready</small>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="proof-strip" id="platform">
+      <div class="wrap proof-strip-grid">
+        <div class="proof-badge">14-day free trial</div>
+        <div class="proof-metrics" aria-label="LogicFit metrics">
+          <article><strong data-count="9">9</strong><span>systems in one platform</span></article>
+          <article><strong>∞</strong><span>branches from one account</span></article>
+          <article><strong>RTL</strong><span>designed for Arabic</span></article>
+        </div>
+        <div class="proof-intro">
+          <span>Built for our market</span>
+          <h2>Everything you need<br>under one operation.</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section centered-section" id="solutions">
+      <div class="wrap">
+        <p class="section-kicker">Why LogicFit</p>
+        <h2>Stronger operations start when every detail is connected.</h2>
+        <p class="section-lead">Instead of scattered files and delayed decisions, give your team one view they can act from at the right time.</p>
+        <div class="outcome-grid">
+          <article class="outcome-card rv">
+            <span>01 - from reception</span>
+            <h3>Every member is in place.</h3>
+            <p>Their subscription, attendance, payments, and communication are immediately available to your team.</p>
+          </article>
+          <article class="outcome-card rv">
+            <span>02 - from decisions</span>
+            <h3>Numbers do not wait until month end.</h3>
+            <p>Track revenue, renewals, and attendance from one connected dashboard.</p>
+          </article>
+          <article class="outcome-card rv">
+            <span>03 - from experience</span>
+            <h3>Your member feels known.</h3>
+            <p>A branded app shows their program, nutrition, and progress in your gym's experience.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section operations-section">
+      <div class="wrap operations-head">
+        <div class="live-insight rv">
+          <strong data-count="248500" data-count-prefix="EGP ">EGP 248,500</strong>
+          <span>monthly revenue - live</span>
+        </div>
+        <div>
+          <p class="section-kicker">Run your day from one screen</p>
+          <h2>The dashboard before every decision.</h2>
+          <p class="section-lead">Monitor revenue, attendance, and renewals moment by moment, and know where to step in before it is late.</p>
+        </div>
+      </div>
+      <div class="wrap dashboard-frame rv">
+        <img src="assets/figma-next/dashboard-mockup.png" alt="LogicFit dashboard showing gym operating metrics">
+      </div>
+    </section>
+
+    <section class="section app-section">
+      <div class="wrap app-grid">
+        <div class="app-mock rv">
+          <img src="assets/figma-next/member-app-mockup.png" alt="LogicFit branded member app screens">
+        </div>
+        <div class="app-copy rv">
+          <p class="section-kicker">A member app with your identity</p>
+          <h2>The gym does not end<br>at reception.</h2>
+          <p class="section-lead">Build a daily relationship through an app carrying your gym's name and colors, with training, nutrition, progress, and subscriptions in each member's hand.</p>
+          <strong class="green-badge">White-label • your gym name and logo</strong>
+        </div>
+      </div>
+      <div class="wrap benefit-grid">
+        <article class="benefit-card rv"><b>1</b><div><h3>Follow-up that keeps going</h3><p>Members see their plans and progress every day.</p></div></article>
+        <article class="benefit-card rv"><b>2</b><div><h3>Measurable motivation</h3><p>Training, meals, and measurements in one clear journey.</p></div></article>
+        <article class="benefit-card rv"><b>3</b><div><h3>An identity you own</h3><p>A digital experience that feels built for your gym.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section centered-section journey-section">
+      <div class="wrap">
+        <p class="section-kicker">An experience beyond the workout</p>
+        <h2>Every healthy habit starts with a clear moment.</h2>
+        <p class="section-lead">From attendance to food to progress, LogicFit makes the member journey visible to your team and motivating for the member.</p>
+        <div class="journey-grid">
+          <article class="visual-card rv">
+            <img src="assets/figma-next/journey-training.png" alt="Organized training inside a gym">
+            <div><span>Organized training</span><h3>A workout ready in their daily schedule.</h3></div>
+          </article>
+          <article class="visual-card rv">
+            <img src="assets/figma-next/journey-nutrition.png" alt="Healthy meal in a nutrition plan">
+            <div><span>Balanced nutrition</span><h3>A meal that fits their goal and day.</h3></div>
+          </article>
+          <article class="visual-card rv">
+            <img src="assets/figma-next/journey-progress.png" alt="Member progress tracking">
+            <div><span>Continuous progress</span><h3>A result the member can see and trust.</h3></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section centered-section team-section">
+      <div class="wrap">
+        <p class="section-kicker">One system, a view for every role</p>
+        <h2>Everyone in the gym gets an interface that knows what they need.</h2>
+        <p class="section-lead">LogicFit gives every role clarity and speed without clutter or unnecessary permissions.</p>
+        <div class="role-rail">
+          <article class="role-tile rv"><div><b>01</b><h3>Owner</h3></div><p>Sees branch performance, revenue, and alerts that need a decision now.</p><span>Gym decisions in one place</span></article>
+          <article class="role-tile rv"><div><b>02</b><h3>Manager</h3></div><p>Runs memberships, attendance, and daily team work without confusing paths.</p><span>Fast access to the next task</span></article>
+          <article class="role-tile rv"><div><b>03</b><h3>Coach</h3></div><p>Builds training and nutrition plans and follows trainee progress clearly.</p><span>Fast access to the next task</span></article>
+          <article class="role-tile rv"><div><b>04</b><h3>Reception</h3></div><p>Registers, renews, and handles cashier workflows from a quick daily path.</p><span>Fast access to the next task</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story-section" id="success">
+      <div class="wrap story-grid">
+        <div class="story-photo rv">
+          <img src="assets/figma-next/story-gym.png" alt="Gym management team reviewing operations">
+          <span>Real operations story</span>
+        </div>
+        <div class="story-copy rv">
+          <p class="section-kicker">When data becomes confidence</p>
+          <blockquote>"My team now knows what is happening<br>before it becomes a problem."</blockquote>
+          <p>Renewal alerts, attendance tracking, and one daily dashboard helped management leave guessing behind and focus on the member.</p>
+          <cite>Ahmed Samy • Gold Gym Manager</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="resources">
+      <div class="wrap faq-grid">
+        <div class="faq-list">
+          <article class="faq-card featured rv">
+            <h3>Can I start with one branch?</h3>
+            <p>Yes. Add branches, roles, and permissions from the same account when you are ready.</p>
+          </article>
+          <article class="faq-card rv"><h3>Does the member app carry my gym identity?</h3></article>
+          <article class="faq-card rv"><h3>Is there a trial before committing?</h3></article>
+          <article class="faq-card rv"><h3>Does LogicFit fully support Arabic?</h3></article>
+        </div>
+        <div class="faq-copy rv">
+          <p class="section-kicker">Clear answers before you start</p>
+          <h2>Everything you need to know before you begin.</h2>
+          <p>Start a free trial or request a demo focused on how your gym operates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="start">
+      <div class="wrap cta-card rv">
+        <p class="section-kicker">Ready for a stronger start?</p>
+        <h2>Run your gym from one place.<br>Build an experience worth returning to.</h2>
+        <p>Start your 14-day LogicFit free trial, or book a demo focused on the way your gym runs.</p>
+        <a class="btn btn-primary btn-large" href="mailto:sales@logicfit.app">Start free trial</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand-logo" href="#home" aria-label="LogicFit home">
+          <img class="logo-light" src="assets/figma-next/logo-light.png" alt="LogicFit">
+          <img class="logo-dark" src="assets/figma-next/logo-dark.png" alt="LogicFit">
+        </a>
+        <p>A unified fitness platform for members, coaches, and gyms.</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <a href="#solutions">Features</a>
+        <a href="#platform">For members</a>
+        <a href="#solutions">For coaches</a>
+        <a href="#solutions">For gyms</a>
+      </div>
+      <div>
+        <h2>Help</h2>
+        <a href="#resources">Help center</a>
+        <a href="#start">Contact us</a>
+        <a href="#resources">Privacy</a>
+        <a href="#resources">Terms</a>
+      </div>
+      <div>
+        <h2>App experience</h2>
+        <a href="#start">Log in</a>
+        <a href="#start">Create account</a>
+        <a href="ar/index.html">Arabic / English</a>
+        <a href="#home" data-theme-link data-label-dark="Dark mode" data-label-light="Light mode">Dark mode</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="roles">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="code">A screen for every role</span>
-      <h2>One interface, permissions for everyone in the gym.</h2>
-      <p>Each person sees only what's theirs — with fine-grained permissions the owner controls.</p>
+    <div class="wrap footer-bottom">
+      <span>© 2026 Logic Fit. All rights reserved.</span>
+      <span>Designed to work clearly in Arabic and English.</span>
     </div>
-    <div class="roles">
-      <div class="role rv"><div class="rt"><span class="rn">01</span><h3>Owner</h3></div><p>The full picture — numbers, branches, staff, and settings, in their hands alone.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">02</span><h3>Manager</h3></div><p>Runs the full daily operation, except billing and account settings.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">03</span><h3>Front desk</h3></div><p>Member sign-up, subscriptions, attendance, and checkout — from one fast screen.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">04</span><h3>Accountant</h3></div><p>Invoices, expenses, payroll, and financial reports, without the rest of operations.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">05</span><h3>Coach</h3></div><p>Their trainees, programs, nutrition, and progress — and their class attendance.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">06</span><h3>Member</h3></div><p>Their own app: program, nutrition, measurements, classes, and subscription.</p></div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<section id="why" class="journey band" aria-labelledby="journey-title">
-  <div class="wrap">
-    <div class="sec-head rv"><span class="code">The LogicFit difference</span><h2 id="journey-title">Everything you need, connected in one place.</h2><p>One calm operating rhythm for owners, staff, coaches, and members.</p></div>
-    <div class="journey-grid">
-      <article class="journey-card rv"><span class="tag-pill">Member journey</span><h3>A better member journey</h3><p>Automated follow-ups, clear subscriptions, classes, check-ins, and progress that keep people moving.</p><a href="#app" class="text-link">Explore the member app <span>→</span></a></article>
-      <article class="journey-card rv"><span class="tag-pill">Operations</span><h3>Management made easy</h3><p>Replace scattered spreadsheets and disconnected tools with one fast workspace for every branch.</p><a href="#modules" class="text-link">See the workspace <span>→</span></a></article>
-      <article class="journey-card rv"><span class="tag-pill">Intelligence</span><h3>Data-driven decisions</h3><p>See attendance, revenue, renewals, capacity, and team performance before small issues become expensive.</p><a href="#cta" class="text-link">Plan your next move <span>→</span></a></article>
-    </div>
-  </div>
-</section>
-
-<section id="stories" class="stories" aria-labelledby="stories-title">
-  <div class="wrap"><div class="sec-head rv"><span class="code">Gym owner stories</span><h2 id="stories-title">Built for the work that happens on the floor.</h2><p>LogicFit gives growing gym teams a system they can trust every day.</p></div>
-    <div class="stories-grid"><article class="story rv"><div class="story-mark">LF</div><p>“Our front desk finally sees the same member story as the coach. We stopped chasing numbers and started acting on them.”</p><footer><b>Ahmed · Top Gym</b><span>Owner</span></footer></article><article class="story rv"><div class="story-mark">LF</div><p>“The branded app makes our members feel like they belong to us—not a generic platform.”</p><footer><b>Sarah · Pulse Studio</b><span>Operations manager</span></footer></article><article class="story rv"><div class="story-mark">LF</div><p>“From a new lead to renewal, every step is visible. That clarity changed how our team works.”</p><footer><b>Omar · Titan Club</b><span>Gym owner</span></footer></article></div>
-  </div>
-</section>
-
-<section id="resources" class="resources" aria-labelledby="resources-title"><div class="wrap"><div class="sec-head rv"><span class="code">Resources for gym teams</span><h2 id="resources-title">Practical ideas to run and grow better.</h2><p>Short guides for owners, operators, and coaches building a stronger gym.</p></div><div class="resources-grid"><article class="resource-card rv"><span class="tag-pill">Operations</span><h3>How to build a calmer front desk</h3><p>Turn check-ins, follow-ups, and renewals into one repeatable daily rhythm.</p><small>LogicFit guide · 6 min read</small></article><article class="resource-card rv"><span class="tag-pill">Growth</span><h3>Fill your next class without guesswork</h3><p>Connect leads, capacity, attendance, and messages so your team knows what to do next.</p><small>LogicFit guide · 8 min read</small></article><article class="resource-card rv"><span class="tag-pill">Coaching</span><h3>A simple system for member progress</h3><p>Give coaches one place to build programs and show members the momentum they are creating.</p><small>LogicFit guide · 5 min read</small></article></div></div></section>
-
-<section class="faq band" aria-labelledby="faq-title"><div class="wrap"><div class="sec-head rv"><span class="code">Questions, answered</span><h2 id="faq-title">A clear start for your team.</h2></div><div class="faq-list"><details class="rv"><summary>Can I start with one branch and grow later?</summary><p>Yes. Start with one location, then add branches, roles, and permissions from the same account.</p></details><details class="rv"><summary>Will the member app carry our brand?</summary><p>Yes. Your logo, colors, name, and member experience are ready for a white-label setup.</p></details><details class="rv"><summary>Can my team try LogicFit before committing?</summary><p>Start with the free trial or book a focused demo for your operation.</p></details></div></div></section>
-
-<section class="band">
-  <div class="wrap strip">
-    <div class="rv"><div class="n mono"><span data-count="9">0</span></div><div class="l">connected systems in one</div></div>
-    <div class="rv"><div class="n mono">∞</div><div class="l">branches from one account</div></div>
-    <div class="rv"><div class="n mono"><span data-count="6">0</span></div><div class="l">roles with fine-grained access</div></div>
-    <div class="rv"><div class="n">AR·EN</div><div class="l">bilingual, RTL &amp; LTR ready</div></div>
-  </div>
-</section>
-
-<section id="cta">
-  <div class="wrap">
-    <div class="final rv">
-      <span class="code" style="justify-content:center">Ready?</span>
-      <h2 style="margin-top:16px">Run your gym from one place.</h2>
-      <p>Start a 14-day free trial — activate your gym, add your first branch, and launch your members' app today.</p>
-      <form class="lead-form" id="trialForm" novalidate><label class="sr-only" for="trialEmail">Work email</label><input id="trialEmail" name="email" type="email" autocomplete="email" placeholder="Work email" required><button class="btn btn-primary" type="submit">Start free trial →</button><small class="form-note">No credit card · We reply within one business day</small><span class="form-status" aria-live="polite"></span></form>
-      <div class="hero-actions"><button class="btn btn-ghost" type="button" data-open-demo>Book a demo</button></div>
-    </div>
-  </div>
-</section>
-
-<div class="modal" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoTitle"><div class="modal-backdrop" data-close-demo></div><div class="modal-card"><button class="modal-close" type="button" aria-label="Close" data-close-demo>×</button><span class="code">Talk to sales</span><h2 id="demoTitle">See LogicFit in your gym.</h2><p>Tell us a little about your operation and we will arrange a focused walkthrough.</p><form class="demo-form" id="demoForm" novalidate><label>Gym name<input name="gym" type="text" required></label><label>Work email<input name="email" type="email" required></label><label>Branches<select name="branches"><option>1</option><option>2–5</option><option>6–20</option><option>20+</option></select></label><button class="btn btn-primary" type="submit">Request my demo</button><span class="form-status" aria-live="polite"></span></form></div></div>
-
-<footer>
-  <div class="wrap foot-in">
-    <div class="brand" style="font-size:1.05rem"><img class="brand-logo" src="assets/brand/logicfit-dumbbell.svg" alt="LogicFit logo">LogicFit</div>
-    <div>Gym management platform · built for growing studios and chains</div>
-    <div class="mono" style="font-size:.8rem">© 2026 LogicFit</div>
-  </div>
-</footer>
-
-<script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

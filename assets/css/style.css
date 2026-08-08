@@ -573,7 +573,8 @@ html[dir="rtl"] .hero-copy small {
   position: absolute;
   z-index: 4;
   right: 294px;
-  bottom: 72px;
+  top: 86px;
+  bottom: auto;
   width: 184px;
   padding: 17px 18px;
   border: 1px solid rgba(255, 255, 255, 0.24);
@@ -1019,7 +1020,8 @@ html[data-theme="dark"] .app-mock img {
 
 .visual-card {
   position: relative;
-  min-height: 335px;
+  height: 300px;
+  min-height: 0;
   overflow: hidden;
   border-radius: 28px;
   background: var(--lf-dark-panel);
@@ -1029,7 +1031,7 @@ html[data-theme="dark"] .app-mock img {
 .visual-card img {
   width: 100%;
   height: 100%;
-  min-height: 335px;
+  min-height: 0;
   object-fit: cover;
   object-position: center;
 }
@@ -1621,6 +1623,7 @@ html[data-theme="dark"] .nav-v2.is-scrolled {
 
   .floating-metric,
   html[dir="rtl"] .floating-metric {
+    top: auto;
     right: 42px;
     left: auto;
     bottom: 42px;
@@ -1856,7 +1859,8 @@ html[data-theme="dark"] .nav-v2.is-scrolled {
 
   .visual-card,
   .visual-card img {
-    min-height: 300px;
+    height: 280px;
+    min-height: 0;
   }
 
   .story-photo,
@@ -1980,6 +1984,7 @@ html[data-theme="dark"] .nav-v2.is-scrolled {
 
   .floating-metric,
   html[dir="rtl"] .floating-metric {
+    top: auto;
     right: 18px;
     left: auto;
     bottom: 18px;
@@ -2047,7 +2052,8 @@ html[data-theme="dark"] .nav-v2.is-scrolled {
 
   .visual-card,
   .visual-card img {
-    min-height: 260px;
+    height: 235px;
+    min-height: 0;
   }
 
   .visual-card h3 {

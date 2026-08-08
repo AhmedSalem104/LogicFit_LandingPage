@@ -855,7 +855,7 @@ html[dir="rtl"] .showcase-head > div:last-child {
   height: auto;
   padding: 0;
   border: 0;
-  background: var(--lf-background-surface);
+  background: transparent;
   box-shadow: none;
 }
 
@@ -864,6 +864,22 @@ html[dir="rtl"] .showcase-head > div:last-child {
   aspect-ratio: 1248 / 690;
   object-position: center;
   border-radius: 28px;
+}
+
+.showcase-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .showcase-light {
+  display: none;
+}
+
+html[data-theme="dark"] .showcase-dark {
+  display: block;
+}
+
+html[data-theme="dark"] .showcase-frame {
+  width: min(calc(100vw - 48px), 960px);
 }
 
 .showcase-benefits {
@@ -990,6 +1006,7 @@ html[data-theme="dark"] .app-mock img {
 }
 
 .journey-section {
+  padding: 70px 0 64px;
   background: var(--lf-background-canvas);
 }
 
@@ -997,12 +1014,12 @@ html[data-theme="dark"] .app-mock img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  margin-top: 42px;
+  margin-top: 32px;
 }
 
 .visual-card {
   position: relative;
-  min-height: 410px;
+  min-height: 335px;
   overflow: hidden;
   border-radius: 28px;
   background: var(--lf-dark-panel);
@@ -1012,7 +1029,7 @@ html[data-theme="dark"] .app-mock img {
 .visual-card img {
   width: 100%;
   height: 100%;
-  min-height: 410px;
+  min-height: 335px;
   object-fit: cover;
   object-position: center;
 }
@@ -1042,7 +1059,7 @@ html[data-theme="dark"] .app-mock img {
 
 .visual-card h3 {
   margin-top: 8px;
-  font-size: 1.42rem;
+  font-size: 1.28rem;
   font-weight: 900;
 }
 
@@ -1839,7 +1856,7 @@ html[data-theme="dark"] .nav-v2.is-scrolled {
 
   .visual-card,
   .visual-card img {
-    min-height: 350px;
+    min-height: 300px;
   }
 
   .story-photo,
@@ -2030,11 +2047,11 @@ html[data-theme="dark"] .nav-v2.is-scrolled {
 
   .visual-card,
   .visual-card img {
-    min-height: 320px;
+    min-height: 260px;
   }
 
   .visual-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.14rem;
   }
 
   .story-photo,

@@ -23,6 +23,7 @@ LogicFit_LandingPage/
 │   │   ├── logo-dark.png
 │   │   ├── hero-athlete.png
 │   │   ├── web-app-showcase.png
+│   │   ├── web-app-showcase-dark.png
 │   │   ├── journey-training.png
 │   │   ├── journey-nutrition.png
 │   │   ├── journey-progress.png

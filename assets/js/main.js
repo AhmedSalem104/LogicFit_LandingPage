@@ -324,6 +324,7 @@
       '.faq-card',
       '.cta-card',
       '.dashboard-frame',
+      '.showcase-frame',
       '.app-mock',
       '.story-photo',
       '.live-insight',

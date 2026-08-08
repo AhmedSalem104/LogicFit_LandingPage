@@ -18,11 +18,11 @@ LogicFit_LandingPage/
 │   ├── css/
 │   │   └── style.css
 │   ├── figma-next/
+│   │   ├── favicon-lf.png
 │   │   ├── logo-light.png
 │   │   ├── logo-dark.png
 │   │   ├── hero-athlete.png
-│   │   ├── dashboard-mockup.png
-│   │   ├── member-app-mockup.png
+│   │   ├── web-app-showcase.png
 │   │   ├── journey-training.png
 │   │   ├── journey-nutrition.png
 │   │   ├── journey-progress.png
@@ -51,8 +51,7 @@ Then visit:
 - Next Gen hero
 - Social proof strip
 - Operating outcomes
-- Connected operations dashboard
-- White-label member app
+- Web and mobile product showcase
 - Member journey visuals
 - Team roles
 - Customer story
@@ -65,4 +64,4 @@ Then visit:
 - The Arabic page follows the Figma `landing.ar.next` structure; the English page mirrors the same layout and content hierarchy.
 - Shared behavior lives in `assets/js/main.js`: mobile menu, active navigation state, scroll reveal, and theme switching.
 - Light and dark themes use semantic token values from the Figma landing page.
-- The real Figma-exported LogicFit logo is stored under `assets/figma-next/` with separate light and dark versions.
+- The real Figma-exported LogicFit logo is stored under `assets/figma-next/` with separate light and dark versions, plus a cropped `LF` favicon.

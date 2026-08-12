@@ -1,77 +1,76 @@
-# LogicFit — Landing Page
+# LogicFit Landing Page
 
-Marketing landing page for **LogicFit**, a gym-management platform that runs an entire
-gym from one place and gives members a white-label app carrying the gym's own brand.
+Static bilingual landing page for LogicFit, implemented from the Figma `Landing • AR • Next Gen • Light/Dark` frames and mirrored into English.
 
-Ships in two languages that share a single design system:
+The site uses one shared stylesheet and one shared script:
 
-- **English / LTR** — `index.html` (for international pitches)
-- **Arabic / RTL** — `ar/index.html` (primary MENA market)
-
-A language switcher in the top navigation links the two.
+- English / LTR: `index.html`
+- Arabic / RTL: `ar/index.html`
 
 ## Structure
 
-```
+```text
 LogicFit_LandingPage/
-├── index.html            # English (LTR) — site root
+├── index.html
 ├── ar/
-│   └── index.html        # Arabic (RTL)
+│   └── index.html
 ├── assets/
 │   ├── css/
-│   │   └── style.css     # Shared stylesheet (both pages)
+│   │   └── style.css
+│   ├── figma-next/
+│   │   ├── favicon-lf.png
+│   │   ├── logo-light.png
+│   │   ├── logo-dark.png
+│   │   ├── hero-athlete.png
+│   │   ├── web-app-showcase.png
+│   │   ├── web-app-showcase-dark.png
+│   │   ├── journey-training.png
+│   │   ├── journey-nutrition.png
+│   │   ├── journey-progress.png
+│   │   └── story-gym.png
 │   └── js/
-│       └── main.js       # Shared interactions (both pages)
+│       └── main.js
 └── README.md
 ```
 
-Both pages load the **same** `style.css` and `main.js`. Direction is set on the
-`<html dir>` attribute and the display typeface is switched per language via
-`html[lang="en"]` / `html[lang="ar"]` selectors, so there is no duplicated styling
-or scripting to keep in sync.
+## Run
 
-## Running it
-
-It's a static site — no build step, no dependencies. Either:
-
-- Open `index.html` directly in a browser, **or**
-- Serve the folder (recommended, so relative asset paths resolve cleanly):
+No build step or package install is required. Open either HTML file directly, or serve the folder with any static server:
 
 ```bash
-# Python
-python -m http.server 8000
-
-# or Node
-npx serve .
+python -m http.server 5173 --bind 127.0.0.1
 ```
 
-Then visit <http://localhost:8000/> (English) or <http://localhost:8000/ar/> (Arabic).
+Then visit:
 
-## Design system
+- `http://127.0.0.1:5173/`
+- `http://127.0.0.1:5173/ar/`
 
-| Token | Light | Dark | Role |
-| --- | --- | --- | --- |
-| `--ember` | `#0063FF` | `#0063FF` | Pacific-blue primary accent used for CTAs and interaction states |
-| `--hero` | `#080808` | `#080808` | Deep ink foundation for console and proof sections |
-| `--ember-soft` | `#E7EBFF` | `#182C59` | Blue-tinted surfaces for badges and feature icons |
-| `--ink` | `#14171C` | `#EDEFF2` | Primary text |
-| `--paper` | `#ECEEF1` | `#0E1116` | Page ground (steel-biased neutral) |
-| `--steel` | `#2E6E8E` | `#6FB6D6` | Data / chart tone |
-| `--good` | `#1F9D6B` | `#39C08A` | "Good" status only — not the accent |
+## Current Sections
 
-- **Type** — a characterful display face (condensed *Oswald* stack for EN, *Noto Kufi
-  Arabic* for AR), a system-UI body face, and a monospace with `tabular-nums` for every
-  metric and label. Fonts use system stacks with graceful fallbacks (no external CDN).
-- **Theming** — light + dark, driven entirely by CSS custom properties. Respects the OS
-  `prefers-color-scheme`; the in-page ◐ button overrides it via `data-theme` on `<html>`.
-- **Motion** — count-up stats, a Canvas subscription-growth sparkline, growing volume
-  bars, and scroll reveals. All disabled under `prefers-reduced-motion`.
+- Navigation with persistent active tab state
+- Next Gen hero
+- Social proof strip
+- Operating outcomes
+- Web and mobile product showcase
+- Member journey visuals
+- Team roles
+- Customer story
+- FAQ
+- Final CTA
+- Footer
 
-## Interactive white-label demo
+## Notes
 
-The "Your app. Your name." section has a live demo: tapping a brand swatch recolours the
-member-app mock (`--brand` CSS variable) and swaps its name + logo initial — the fastest
-way to show a prospect what their own branded app would look like.
+- The Arabic page follows the Figma `landing.ar.next` structure; the English page mirrors
+  the same layout and content hierarchy.
+- Shared behavior lives in `assets/js/main.js`: mobile menu, active navigation state,
+  scroll reveal, and theme switching.
+- Light and dark themes use semantic token values from the Figma landing page.
+- The real Figma-exported LogicFit logo is stored under `assets/figma-next/` with separate
+  light and dark versions, plus a cropped `LF` favicon.
+- The "Your app. Your name." section has a live demo: tapping a brand swatch recolours
+  the member-app mock (`--brand` CSS variable) and swaps its name + logo initial.
 
 ## Sections
 

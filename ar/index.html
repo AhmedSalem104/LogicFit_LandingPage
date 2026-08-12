@@ -3,349 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogicFit — منصة إدارة الصالات الرياضية</title>
-  <meta name="description" content="أدِر جيمك كله من لوحة تحكم واحدة — الأعضاء، التدريب، التغذية، الحضور، الكاشير، الرواتب، والتقارير، مع تطبيق يحمل اسم جيمك وهويته.">
+  <title>LogicFit - تشغيل أذكى للجيم</title>
+  <meta name="description" content="LogicFit يجعل تشغيل الجيم أسهل وأوضح: أعضاء، اشتراكات، حضور، تدريب، تغذية، تقارير، وتطبيق أعضاء يحمل هوية الجيم.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230063FF'/%3E%3Cpath d='M18 30h12v40H18zM30 22h10v56H30zM40 42h20v16H40zM60 22h10v56H60zM70 30h12v40H70z' fill='white'/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../assets/figma-next/favicon-lf.png">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('logicfit_theme');
+        var theme = (saved === 'dark' || saved === 'light') ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    })();
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+  <header class="hero-shell" id="home">
+    <nav class="nav-v2" aria-label="التنقل الرئيسي">
+      <div class="nav-controls">
+        <a class="nav-language" href="../index.html" hreflang="en">EN</a>
+        <a class="nav-login" href="#start">تسجيل الدخول</a>
+        <a class="btn btn-primary btn-nav" href="#start">احجز عرضًا</a>
+        <button class="theme-toggle" type="button" aria-label="تفعيل الوضع الداكن" data-theme-toggle data-label-dark="تفعيل الوضع الداكن" data-label-light="تفعيل الوضع الفاتح">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
 
-<div class="announcement" role="region" aria-label="إعلان LogicFit"><div class="wrap announcement-in"><span>حابب تتعرف علينا أكثر؟ شاهد الفعاليات القادمة لأصحاب الجيمات.</span><a class="announcement-cta" href="#stories">شاهد الفعاليات القادمة <span aria-hidden="true">←</span></a></div></div>
-
-<nav>
-  <div class="wrap nav-in">
-    <a class="brand" href="index.html"><img class="brand-logo" src="../assets/brand/logicfit-dumbbell.svg" alt="شعار LogicFit">LogicFit</a>
-    <div class="nav-links">
-      <details class="nav-dropdown"><summary>المنتجات</summary><div class="nav-popover"><a href="#modules">التشغيل الأساسي</a><a href="#coaching">التدريب والمدربون</a><a href="#app">تطبيق الأعضاء</a></div></details>
-      <a href="#cta">الأسعار</a><a href="#stories">عملاؤنا</a><a href="#why">عن LogicFit</a>
-      <details class="nav-dropdown"><summary>المصادر</summary><div class="nav-popover"><a href="#resources">الأدلة والمقالات</a><a href="#faq-title">مركز المساعدة</a></div></details>
-    </div>
-    <div class="nav-cta">
-      <a class="lang" href="../index.html" hreflang="en">English</a>
-      <button class="toggle" id="themeBtn" aria-label="تبديل السمة" type="button">◐</button>
-      <a class="nav-signin" href="#cta">تسجيل الدخول</a><a class="btn btn-primary" href="#cta">احجز عرضًا</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="code">نظام إدارة الجيم المتكامل</span>
-      <h1>أطلق قوة<br><span class="em">مشروعك الرياضي</span><br>بكل ثقة</h1>
-      <p class="lead">أتمت ونظّم وطوّر نشاطك الرياضي مع برنامج سهل الاستخدام صُمم بواسطة <strong>أصحاب الجيمات لأصحاب الجيمات.</strong></p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#cta">ابدأ تجربتك المجانية <span aria-hidden="true">←</span></a>
-        <a class="btn btn-ghost" href="#modules">شاهد كل ما يديره</a>
-      </div>
-      <div class="hero-note">
-        <span><span class="dot"></span>بدون بطاقة ائتمان</span>
-        <span><span class="dot"></span>فروع متعددة</span>
-        <span><span class="dot"></span>عربي كامل — RTL</span>
-      </div>
-      <div class="hero-benefits" aria-label="أهم مزايا LogicFit"><span><b>٠١</b> ملف عضو واحد</span><span><b>٠٢</b> إيرادات وحضور لحظيان</span><span><b>٠٣</b> تطبيق أعضاء بهويتك</span></div>
-    </div>
-
-    <div class="hero-visuals rv"><div class="console" aria-hidden="true"><div class="mock-sidebar"><div class="mock-brand"><img src="../assets/brand/logicfit-dumbbell.svg" alt=""><b>LogicFit Core</b></div><div class="mock-nav active">▦ <span>لوحة التحكم</span></div><div class="mock-nav">♙ <span>الأعضاء</span></div><div class="mock-nav">◌ <span>التواصل</span></div><div class="mock-lines"><i></i><i></i><i></i></div><div class="mock-user"><span>أح</span><small>أحمد سمير<br>الفرع الرئيسي</small></div></div><div class="mock-dashboard-label"><b>يومي</b><small>التقرير المالي</small></div>
-      <div class="console-top">
-        <span class="t">Gold Gym · لوحة اليوم</span>
-        <span class="live"><span class="dot"></span>مباشر</span>
-      </div>
-      <div class="stat-row">
-        <div class="stat"><div class="k">أعضاء نشطون</div><div class="v" data-count="1248">0</div><div class="trend">▲ ٦٪ هذا الشهر</div></div>
-        <div class="stat"><div class="k">دخول اليوم</div><div class="v" data-count="342">0</div><div class="trend">عبر بوابة QR</div></div>
-        <div class="stat"><div class="k">إيراد الشهر</div><div class="v" data-count="284" data-suffix="k">0</div><div class="trend">▲ ١٢٪</div></div>
-      </div>
-      <div class="chart-card">
-        <div class="head"><span class="k">نمو الاشتراكات · ٦ أشهر</span><span class="v mono">+٣٨٪</span></div>
-        <canvas id="spark" width="440" height="70"></canvas>
-      </div>
-      <div class="gate">
-        <span class="qr"></span>
-        <div><div style="font-weight:600">محمد سمير · بطاقة 0001-2345</div><div class="mono" style="font-size:.75rem;color:#8892A0">08:59 · الفرع الرئيسي</div></div>
-        <span class="grant">● سُمح بالدخول</span>
-      </div>
-    </div><div class="hero-phone" aria-hidden="true"><div class="phone-speaker"></div><div class="phone-screen"><div class="phone-top"><img src="../assets/brand/logicfit-dumbbell.svg" alt=""><span>LogicFit</span><i></i></div><div class="phone-greeting">صباح الخير، أحمد</div><div class="phone-actions"><div><b>⌖</b><span>تسجيل الحضور</span></div><div><b>◷</b><span>الاشتراكات</span></div><div><b>▣</b><span>شراء المنتجات</span></div></div><div class="phone-quick"><div><b>＋</b><span>تسجيل عضو</span></div><div class="renew"><b>↻</b><span>تجديد</span></div></div><div class="phone-brand-mark">LogicFit</div></div></div></div>
-  </div>
-</header>
-
-<section class="proof-strip" aria-label="لماذا تختار فرق الجيم LogicFit">
-  <div class="wrap proof-in"><span class="proof-label">مصمم لفرق الجيم الجادة</span><div class="proof-items"><span>صالات مستقلة</span><span>مشغلو الفروع المتعددة</span><span>فرق التدريب</span><span>علامات تركز على الأعضاء</span></div></div>
-</section>
-
-<section class="value-strip" aria-label="قيمة LogicFit"><div class="wrap value-grid"><article><span class="value-icon">٠١</span><h3>املأ أرضية الجيم</h3><p>اجمع العملاء المحتملين والعضويات والتجديدات والحضور بدون أدوات متفرقة.</p></article><article><span class="value-icon">٠٢</span><h3>احمِ الإيرادات</h3><p>اربط الخطط والفواتير والمدفوعات ونقطة البيع والمصروفات والتقارير لحظيًا.</p></article><article><span class="value-icon">٠٣</span><h3>درّب بشكل أفضل</h3><p>أنشئ البرامج والتغذية والجلسات وقِس تقدم كل عضو بوضوح.</p></article><article><span class="value-icon">٠٤</span><h3>امتلك هويتك</h3><p>امنح أعضاءك تطبيقًا يحمل ألوانك وشعارك واسمك وتجربتك.</p></article></div></section>
-
-<section class="band">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="code">المشكلة</span>
-      <h2>أدوات كثيرة. لا شيء منها متصل.</h2>
-      <p>الجيم الناجح يعمل على عشرة أنظمة لا تتحدث مع بعضها — والنتيجة أرقام متناثرة، وقت ضائع، وتجربة عضو تبدو هاوية. LogicFit يجمعها في مكان واحد.</p>
-    </div>
-    <div class="split">
-      <div class="chaos rv">
-        <div class="col-label">الطريقة القديمة</div>
-        <ul class="tool-list">
-          <li><span class="x">✕</span> شيت إكسل للأعضاء، ودفتر للاستقبال</li>
-          <li><span class="x">✕</span> واتساب لبرامج التدريب والتغذية</li>
-          <li><span class="x">✕</span> كاشير منفصل لا يعرف من هو العضو</li>
-          <li><span class="x">✕</span> الرواتب والعمولات على الورق</li>
-          <li><span class="x">✕</span> لا أحد يعرف الأرقام الحقيقية آخر الشهر</li>
-        </ul>
-      </div>
-      <div class="order rv">
-        <div class="col-label">مع LogicFit</div>
-        <ul class="tool-list">
-          <li><span class="c">✓</span> ملف واحد لكل عضو — اشتراكه، حضوره، تقدّمه، مشترياته</li>
-          <li><span class="c">✓</span> المدرب يبني البرنامج والتغذية داخل النظام</li>
-          <li><span class="c">✓</span> الكاشير يعرف العضو ويربط كل عملية بحسابه</li>
-          <li><span class="c">✓</span> الرواتب والعمولات تُحسب تلقائيًا</li>
-          <li><span class="c">✓</span> تقرير حيّ لكل فرع، في أي لحظة</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="modules">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="code">نظام واحد · كل شيء بالداخل</span>
-      <h2>كل جزء من الجيم، يُدار من هنا.</h2>
-      <p>من أول لمسة عضو جديد حتى قفل حساب آخر الشهر — تسعة أنظمة متكاملة تشتغل كوحدة واحدة.</p>
-    </div>
-    <div class="modules">
-      <div class="mod rv"><div class="num">01</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M15 11a3 3 0 100-6M2 21v-1a5 5 0 015-5h4a5 5 0 015 5v1M17 15h1a4 4 0 014 4v2"/></svg></div>
-        <h3>العضوية والاشتراكات</h3>
-        <p>ملف كامل لكل عضو، خطط اشتراك، تجميد، محفظة، وبطاقات عضوية بـ QR.</p>
-        <div class="tags"><span>الأعضاء</span><span>الاشتراكات</span><span>المحفظة</span></div>
-      </div>
-      <div class="mod rv"><div class="num">02</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7v10M18 7v10M3 9v6M21 9v6M6 12h12"/></svg></div>
-        <h3>التدريب والتمارين</h3>
-        <p>المدرب يبني برامج تمرين مفصّلة، يتابع الجلسات، الأوزان، والأرقام القياسية لكل متدرب.</p>
-        <div class="tags"><span>البرامج</span><span>الجلسات</span><span>مكتبة التمارين</span></div>
-      </div>
-      <div class="mod rv"><div class="num">03</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-        <h3>التغذية وقياسات الجسم</h3>
-        <p>خطط غذائية بالسعرات والماكروز، وقياسات InBody كاملة — نسبة الدهون، الكتلة العضلية، صور التقدّم.</p>
-        <div class="tags"><span>الخطط الغذائية</span><span>InBody</span><span>الأطعمة</span></div>
-      </div>
-      <div class="mod rv"><div class="num">04</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
-        <h3>الحضور وبوابة QR</h3>
-        <p>دخول بمسح كود، تسجيل حضور فوري، منع الدخول عند انتهاء الاشتراك، وسجل كامل لكل فرع.</p>
-        <div class="tags"><span>Check-in</span><span>بوابة QR</span><span>البطاقات</span></div>
-      </div>
-      <div class="mod rv"><div class="num">05</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
-        <h3>الحصص والمواعيد</h3>
-        <p>حصص جماعية، جداول متكررة، حجز وقائمة انتظار، ومواعيد تدريب شخصية.</p>
-        <div class="tags"><span>الحصص</span><span>الحجوزات</span><span>المواعيد</span></div>
-      </div>
-      <div class="mod rv"><div class="num">06</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12.5A2 2 0 009.5 17H18a2 2 0 002-1.6L21.5 8H6"/></svg></div>
-        <h3>نقطة البيع والمخزون</h3>
-        <p>كاشير مربوط بالأعضاء، منتجات ومكمّلات، حركة مخزون، موردون، وأوامر شراء.</p>
-        <div class="tags"><span>POS</span><span>المخزون</span><span>الموردون</span></div>
-      </div>
-      <div class="mod rv"><div class="num">07</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
-        <h3>الفواتير والمالية</h3>
-        <p>فواتير ومدفوعات، مصروفات، كوبونات خصم، ضرائب، ومحفظة لكل عضو — كل قرش موثّق.</p>
-        <div class="tags"><span>الفواتير</span><span>المصروفات</span><span>الكوبونات</span></div>
-      </div>
-      <div class="mod rv"><div class="num">08</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
-        <h3>الموظفون والرواتب</h3>
-        <p>ورديات، إجازات، عمولات المدربين، ودورات رواتب تُحتسب تلقائيًا.</p>
-        <div class="tags"><span>الورديات</span><span>العمولات</span><span>الرواتب</span></div>
-      </div>
-      <div class="mod rv"><div class="num">09</div>
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
-        <h3>الفروع والتقارير</h3>
-        <p>أدِر فروعًا متعددة من حساب واحد، بغرف وأجهزة وصيانة، ولوحات أرقام حيّة لكل فرع.</p>
-        <div class="tags"><span>الفروع</span><span>الأجهزة</span><span>اللوحات</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="coaching" class="band">
-  <div class="wrap feat">
-    <div class="rv">
-      <span class="code">التدريب</span>
-      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem)">تدريب تظهر نتائجه — بالأرقام.</h2>
-      <p style="color:var(--ink-soft); margin-top:16px; font-size:1.05rem">المدرب لا يكتب البرنامج على ورقة تضيع. يبنيه داخل LogicFit، ويتابع كل تكرار وكل قياس — فيرى العضو تقدّمه، ويرى المدرب أثره.</p>
-      <ul class="feat-list">
-        <li><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><b>برامج تُبنى مرة، وتُنسخ لأي متدرب</b><p>روتين لكل يوم، تمارين بمجموعات وتكرارات وراحة، وسوبرسِت.</p></div></li>
-        <li><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></span>
-          <div><b>جلسات تُسجَّل بالوزن والتكرار</b><p>حجم التحميل الكلي، ورصد الأرقام القياسية (PR) تلقائيًا.</p></div></li>
-        <li><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M12 8V4M6 20v-4M6 12V4M18 20v-8M18 8V4"/></svg></span>
-          <div><b>قياسات InBody على خط زمني</b><p>الوزن، نسبة الدهون، الكتلة العضلية، وصور أمام/جانب/خلف — تقدّم يُرى.</p></div></li>
-      </ul>
-    </div>
-
-    <div class="progress-card rv">
-      <div class="pc-head">
-        <div class="who"><div class="avatar">م</div><div><b>محمد سمير</b><span>١٢ أسبوع · كابتن أحمد</span></div></div>
-        <span class="pr-badge">PR جديد · بنش ٩٠كجم</span>
-      </div>
-      <div class="metrics">
-        <div class="metric"><div class="k">الوزن</div><div class="v">80<span class="u">كجم</span></div><div class="d down">▼ ٦.٢</div></div>
-        <div class="metric"><div class="k">نسبة الدهون</div><div class="v">18<span class="u">٪</span></div><div class="d up">▼ ٥.٤</div></div>
-        <div class="metric"><div class="k">كتلة عضلية</div><div class="v">36<span class="u">كجم</span></div><div class="d up">▲ ٢.١</div></div>
-      </div>
-      <div class="bars">
-        <div class="bar" style="height:40%"><span>3.6k</span></div>
-        <div class="bar" style="height:52%"><span>4.1k</span></div>
-        <div class="bar" style="height:48%"><span>3.9k</span></div>
-        <div class="bar" style="height:66%"><span>4.6k</span></div>
-        <div class="bar" style="height:78%"><span>5.0k</span></div>
-        <div class="bar" style="height:100%"><span>5.4k</span></div>
-      </div>
-      <div class="bars-x"><span>أ١</span><span>أ٣</span><span>أ٥</span><span>أ٧</span><span>أ٩</span><span>أ١٢</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="people-section" aria-labelledby="people-title">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="code">مصمم حول الأشخاص الحقيقيين</span>
-      <h2 id="people-title">تجربة جيم أفضل تبدأ من فريقك.</h2>
-      <p>امنح المدربين والأعضاء والموظفين مساحة واحدة واضحة لدفع كل هدف إلى الأمام.</p>
-    </div>
-    <div class="people-grid">
-      <figure class="people-card people-card-large rv"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=82" alt="رجل يتدرب بالبار في جيم حديث" loading="lazy"><figcaption><b>تدرّب بتركيز.</b><span>البرامج والجلسات والتقدم في شاشة واحدة.</span></figcaption></figure>
-      <figure class="people-card rv"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=82" alt="رجل يستخدم أحد أجهزة الجيم" loading="lazy"><figcaption><b>أدر أرضية الجيم.</b><span>كل فرع وحصة وحضور متصل معًا.</span></figcaption></figure>
-      <figure class="people-card rv"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=82" alt="رجل يؤدي تمرينًا وظيفيًا" loading="lazy"><figcaption><b>شاهد التقدم.</b><span>حوّل الجهد إلى نتائج قابلة للقياس.</span></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="app" class="wl">
-  <div class="wrap wl-grid">
-    <div class="rv">
-      <span class="code">White-label</span>
-      <h2>تطبيقك أنت. باسمك أنت.</h2>
-      <p>أعضاؤك لا يفتحون «LogicFit» — يفتحون تطبيق جيمك، بشعارك، بألوانك، بنطاقك الخاص. برامجهم، اشتراكهم، حصصهم، وتقدّمهم كله في مكان يحمل اسمك.</p>
-      <div class="swatches" role="group" aria-label="اختر لون العلامة">
-        <button class="sw" type="button" data-c="#0063FF" data-name="LogicFit Blue" data-i="L" style="background:#0063FF" aria-pressed="true" aria-label="أزرق باسيفيك"></button>
-        <button class="sw" type="button" data-c="#2563EB" data-name="Titan Club" data-i="T" style="background:#2563EB" aria-pressed="false" aria-label="أزرق"></button>
-        <button class="sw" type="button" data-c="#1F9D6B" data-name="Pulse Fit" data-i="P" style="background:#1F9D6B" aria-pressed="false" aria-label="أخضر"></button>
-        <button class="sw" type="button" data-c="#7C3AED" data-name="Nova Gym" data-i="N" style="background:#7C3AED" aria-pressed="false" aria-label="بنفسجي"></button>
-        <button class="sw" type="button" data-c="#E11D74" data-name="Flex Studio" data-i="F" style="background:#E11D74" aria-pressed="false" aria-label="وردي"></button>
-      </div>
-      <p class="wl-hint">← جرّب: اضغط لونًا وشاهد تطبيق أعضائك يتغيّر.</p>
-    </div>
-
-    <div class="phone rv">
-      <div class="phone-screen">
-        <div class="app-top">
-          <div class="row">
-            <div class="app-logo"><img class="app-logo-mark" src="../assets/brand/logicfit-dumbbell.svg" alt=""><span class="lg" id="appInitial">G</span><b id="appName">Gold Gym</b></div>
-            <span class="mono" style="font-size:.75rem;opacity:.85">☰</span>
-          </div>
-          <div class="app-greet">مساء الخير 👋<div class="big">محمد سمير</div></div>
+      <div class="brand-links">
+        <a class="brand-logo" href="#home" aria-label="LogicFit الرئيسية">
+          <img class="logo-light" src="../assets/figma-next/logo-light.png" alt="LogicFit">
+          <img class="logo-dark" src="../assets/figma-next/logo-dark.png" alt="LogicFit">
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="#platform">المنصة</a>
+          <a href="#solutions">الحلول</a>
+          <a href="#success">النجاح</a>
+          <a href="#resources">الموارد</a>
         </div>
-        <div class="app-body">
-          <div class="app-card">
-            <div class="lbl"><span>برنامج اليوم · Push Day</span><span class="go">فتح ›</span></div>
-            <div class="val">٦ تمارين · ٢٤ مجموعة</div>
-            <div class="app-prog" style="margin-top:10px"><i></i></div>
-          </div>
-          <div class="app-mini">
-            <div class="m"><div class="n">٤</div><div class="t">أيام هذا الأسبوع</div></div>
-            <div class="m"><div class="n">18٪</div><div class="t">نسبة الدهون</div></div>
-          </div>
-          <div class="app-card">
-            <div class="lbl"><span>الحصة القادمة</span><span class="go">حجز ›</span></div>
-            <div class="val">يوجا الصباح · ٨:٠٠ ص</div>
-          </div>
+      </div>
+
+      <button class="menu-button" type="button" aria-label="فتح القائمة" aria-controls="navLinks" aria-expanded="false" data-menu>
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <section class="hero-canvas">
+      <div class="hero-media rv">
+        <img src="../assets/figma-next/hero-athlete.png" alt="رياضي يتدرب داخل الجيم">
+        <div class="media-scrim"></div>
+        <div class="image-caption">
+          <span>مساحة أقوى للنتائج</span>
+          <strong>كل حركة تُسجّل. كل نتيجة تظهر.</strong>
         </div>
-        <div class="app-nav"><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="floating-metric rv">
+        <strong data-count="1248" data-count-prefix="+">+١٬٢٤٨</strong>
+        <span>عضو نشط هذا الشهر</span>
+      </div>
+
+      <div class="hero-copy rv">
+        <p class="section-kicker">LOGICFIT - تشغيل أذكى للجيم</p>
+        <h1>كل رحلة لياقة<br>في مكان واحد.</h1>
+        <p>من أول دخول للعضو إلى آخر تقرير في نهاية اليوم، LogicFit يجعل التشغيل أسهل، أسرع، وأكثر وضوحًا لفريقك.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-large" href="#start">ابدأ التجربة المجانية</a>
+          <a class="btn btn-secondary btn-large" href="#platform">شاهد جولة المنصة</a>
+        </div>
+        <small>بدون بطاقة ائتمان • تهيئة ودعم عربي • فروع متعددة</small>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="proof-strip" id="platform">
+      <div class="wrap proof-strip-grid">
+        <div class="proof-badge">تجربة مجانية ١٤ يومًا</div>
+        <div class="proof-metrics" aria-label="مؤشرات LogicFit">
+          <article><strong data-count="9">٩</strong><span>أنظمة في منصة</span></article>
+          <article><strong>∞</strong><span>فروع من حساب</span></article>
+          <article><strong>RTL</strong><span>مصمم بالعربية</span></article>
+        </div>
+        <div class="proof-intro">
+          <span>نظام مصمم لسوقنا</span>
+          <h2>كل ما تحتاجه<br>تحت إدارة واحدة.</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section centered-section" id="solutions">
+      <div class="wrap">
+        <p class="section-kicker">لماذا LogicFit</p>
+        <h2>التشغيل الأقوى يبدأ عندما تتصل كل التفاصيل.</h2>
+        <p class="section-lead">بدل ملفات متفرقة وقرارات متأخرة، امنح فريقك رؤية واحدة تتصرف منها في الوقت المناسب.</p>
+        <div class="outcome-grid">
+          <article class="outcome-card rv">
+            <span>٠١ - من الاستقبال</span>
+            <h3>كل عضو في مكانه.</h3>
+            <p>اشتراكه، حضوره، مدفوعاته، وتواصله متاحون فورًا لفريقك.</p>
+          </article>
+          <article class="outcome-card rv">
+            <span>٠٢ - من القرارات</span>
+            <h3>الأرقام لا تنتظر نهاية الشهر.</h3>
+            <p>تابع الإيراد، التجديدات، والحضور من لوحة واحدة متصلة.</p>
+          </article>
+          <article class="outcome-card rv">
+            <span>٠٣ - من التجربة</span>
+            <h3>عضوك يشعر أن الجيم يعرفه.</h3>
+            <p>تطبيق يحمل اسمك ويعرض له برنامجه، تغذيته، وتقدمه.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase-section">
+      <div class="wrap showcase-head">
+        <div class="live-insight rv">
+          <strong data-count="248500" data-count-suffix=" ج.م">٢٤٨٬٥٠٠ ج.م</strong>
+          <span>إيرادك الشهري - مباشر</span>
+        </div>
+        <div>
+          <p class="section-kicker">ويب وموبايل لكل دور</p>
+          <h2>أدوار مختلفة. منصة واحدة.</h2>
+          <p class="section-lead">من صاحب الجيم للمدرب للعضو: تجربة متصلة على الويب وتطبيق الموبايل.</p>
+        </div>
+      </div>
+      <div class="wrap showcase-frame rv">
+        <img class="showcase-light" src="../assets/figma-next/web-app-showcase.png" alt="واجهة LogicFit على الويب وتطبيق الموبايل">
+        <img class="showcase-dark" src="../assets/figma-next/web-app-showcase-dark.png" alt="واجهة LogicFit على الويب وتطبيق الموبايل في الوضع الداكن">
+      </div>
+      <div class="wrap benefit-grid showcase-benefits">
+        <article class="benefit-card rv"><b>١</b><div><h3>متابعة لا تتوقف</h3><p>العضو يرى خطته وتقدمه كل يوم.</p></div></article>
+        <article class="benefit-card rv"><b>٢</b><div><h3>حافز قابل للقياس</h3><p>تمارين، وجبات، وقياسات في رحلة واضحة.</p></div></article>
+        <article class="benefit-card rv"><b>٣</b><div><h3>هوية تملكها</h3><p>تجربة رقمية تبدو وكأنها بُنيت لجيمك.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section centered-section journey-section">
+      <div class="wrap">
+        <p class="section-kicker">تجربة لا تُختزل في التمرين</p>
+        <h2>كل عادة صحية تبدأ بلحظة واضحة.</h2>
+        <p class="section-lead">من الحضور إلى الطعام إلى التقدم؛ LogicFit يجعل رحلة العضو مرئية لفريقك وملهمة له.</p>
+        <div class="journey-grid">
+          <article class="visual-card rv">
+            <img src="../assets/figma-next/journey-training.png" alt="تدريب منظم داخل الجيم">
+            <div><span>تدريب منظّم</span><h3>تمرين حاضر في جدول يومه.</h3></div>
+          </article>
+          <article class="visual-card rv">
+            <img src="../assets/figma-next/journey-nutrition.png" alt="وجبة صحية ضمن خطة التغذية">
+            <div><span>تغذية متوازنة</span><h3>وجبة تناسب هدفه ويومه.</h3></div>
+          </article>
+          <article class="visual-card rv">
+            <img src="../assets/figma-next/journey-progress.png" alt="متابعة تقدم العضو">
+            <div><span>تقدم مستمر</span><h3>نتيجة يراها العضو ويثق بها.</h3></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section centered-section team-section">
+      <div class="wrap">
+        <p class="section-kicker">نظام واحد، رؤية تناسب كل دور</p>
+        <h2>لكل شخص في الجيم واجهة تعرف ما يحتاجه.</h2>
+        <p class="section-lead">صمّمنا LogicFit ليمنح كل دور وضوحًا وسرعة، من غير تعقيد أو صلاحيات زائدة.</p>
+        <div class="role-rail">
+          <article class="role-tile rv"><div><b>٠١</b><h3>المالك</h3></div><p>يرى أداء الفروع، الإيراد، والتنبيهات التي تحتاج قرارًا الآن.</p><span>قرارات الجيم كلها في مكان واحد</span></article>
+          <article class="role-tile rv"><div><b>٠٢</b><h3>المدير</h3></div><p>يدير العضويات والحضور والفريق اليومي بدون تفريعات مربكة.</p><span>وصول سريع للمهمة التالية</span></article>
+          <article class="role-tile rv"><div><b>٠٣</b><h3>الكابتن</h3></div><p>يبني خطط التدريب والتغذية ويتابع تقدم المتدربين بوضوح.</p><span>وصول سريع للمهمة التالية</span></article>
+          <article class="role-tile rv"><div><b>٠٤</b><h3>الاستقبال</h3></div><p>يسجل ويجدد ويدير الكاشير من مسار سريع مخصص للحركة اليومية.</p><span>وصول سريع للمهمة التالية</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story-section" id="success">
+      <div class="wrap story-grid">
+        <div class="story-photo rv">
+          <img src="../assets/figma-next/story-gym.png" alt="إدارة جيم تتابع التشغيل اليومي">
+          <span>قصة تشغيل حقيقية</span>
+        </div>
+        <div class="story-copy rv">
+          <p class="section-kicker">عندما تتحول البيانات إلى ثقة</p>
+          <blockquote>“أصبح فريقي يعرف ما يحدث<br>قبل أن يتحول إلى مشكلة.”</blockquote>
+          <p>تنبيهات التجديد، متابعة الحضور، ولوحة يومية واحدة ساعدت الإدارة على ترك التخمين والتركيز على العضو.</p>
+          <cite>أحمد سامي • مدير Gold Gym</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="resources">
+      <div class="wrap faq-grid">
+        <div class="faq-list">
+          <article class="faq-card featured rv">
+            <h3>هل يمكنني البدء بفرع واحد؟</h3>
+            <p>نعم، ثم أضف الفروع والأدوار والصلاحيات من نفس الحساب عندما تكون جاهزًا.</p>
+          </article>
+          <article class="faq-card rv"><h3>هل تطبيق الأعضاء يحمل هوية جيمي؟</h3></article>
+          <article class="faq-card rv"><h3>هل توجد تجربة قبل الالتزام؟</h3></article>
+          <article class="faq-card rv"><h3>هل يدعم LogicFit العربية بالكامل؟</h3></article>
+        </div>
+        <div class="faq-copy rv">
+          <p class="section-kicker">أسئلة واضحة قبل البداية</p>
+          <h2>كل ما تحتاج أن تعرفه قبل أن تبدأ.</h2>
+          <p>ابدأ بتجربة مجانية أو اطلب عرضًا يشرح LogicFit لطريقة تشغيل جيمك.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="start">
+      <div class="wrap cta-card rv">
+        <p class="section-kicker">جاهز لبداية أقوى؟</p>
+        <h2>شغّل جيمك من مكان واحد.<br>وابنِ تجربة تستحق العودة.</h2>
+        <p>ابدأ تجربة LogicFit المجانية لمدة ١٤ يومًا، أو احجز عرضًا يركز على طريقة تشغيل جيمك.</p>
+        <a class="btn btn-primary btn-large" href="mailto:sales@logicfit.app">ابدأ التجربة المجانية</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand-logo" href="#home" aria-label="LogicFit الرئيسية">
+          <img class="logo-light" src="../assets/figma-next/logo-light.png" alt="LogicFit">
+          <img class="logo-dark" src="../assets/figma-next/logo-dark.png" alt="LogicFit">
+        </a>
+        <p>منصة لياقة موحّدة للمتدرب، المدرب والجيم.</p>
+      </div>
+      <div>
+        <h2>المنتج</h2>
+        <a href="#solutions">المميزات</a>
+        <a href="#platform">للمتدربين</a>
+        <a href="#solutions">للمدربين</a>
+        <a href="#solutions">للجيمات</a>
+      </div>
+      <div>
+        <h2>المساعدة</h2>
+        <a href="#resources">مركز المساعدة</a>
+        <a href="#start">تواصل معنا</a>
+        <a href="#resources">الخصوصية</a>
+        <a href="#resources">الشروط</a>
+      </div>
+      <div>
+        <h2>تجربة التطبيق</h2>
+        <a href="#start">تسجيل الدخول</a>
+        <a href="#start">إنشاء حساب</a>
+        <a href="../index.html">العربية / English</a>
+        <a href="#home" data-theme-link data-label-dark="الوضع الداكن" data-label-light="الوضع الفاتح">الوضع الداكن</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="roles">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="code">لكل دور شاشته</span>
-      <h2>واجهة واحدة، صلاحيات لكل من في الجيم.</h2>
-      <p>كل شخص يرى ما يخصّه فقط — بصلاحيات دقيقة يتحكم بها المالك.</p>
+    <div class="wrap footer-bottom">
+      <span>© 2026 Logic Fit. كل الحقوق محفوظة.</span>
+      <span>صُمم ليشتغل بوضوح في العربي والإنجليزي.</span>
     </div>
-    <div class="roles">
-      <div class="role rv"><div class="rt"><span class="rn">01</span><h3>المالك</h3></div><p>صورة كاملة للجيم — الأرقام، الفروع، الموظفون، والإعدادات، في يده وحده.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">02</span><h3>المدير</h3></div><p>يدير التشغيل اليومي كاملًا، عدا إعدادات الفوترة والحساب.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">03</span><h3>الاستقبال</h3></div><p>تسجيل الأعضاء، الاشتراكات، الحضور، والكاشير — من شاشة واحدة سريعة.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">04</span><h3>المحاسب</h3></div><p>الفواتير، المصروفات، الرواتب، والتقارير المالية دون بقية العمليات.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">05</span><h3>الكابتن</h3></div><p>متدربوه، برامجهم، تغذيتهم، وتقدّمهم — وحضور حصصه.</p></div>
-      <div class="role rv"><div class="rt"><span class="rn">06</span><h3>العضو</h3></div><p>تطبيقه الخاص: برنامجه، غذاؤه، قياساته، حصصه، واشتراكه.</p></div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<section id="why" class="journey band" aria-labelledby="journey-title">
-  <div class="wrap">
-    <div class="sec-head rv"><span class="code">فرق LogicFit</span><h2 id="journey-title">كل ما تحتاجه، متصل في مكان واحد.</h2><p>إيقاع تشغيل واضح ومريح للمالك والفريق والمدرب والعضو.</p></div>
-    <div class="journey-grid">
-      <article class="journey-card rv"><span class="tag-pill">رحلة العضو</span><h3>تجربة أفضل للعضو</h3><p>متابعة تلقائية واشتراكات وحصص وحضور وتقدم واضح يحافظ على حماس الأعضاء.</p><a href="#app" class="text-link">اكتشف تطبيق الأعضاء <span>←</span></a></article>
-      <article class="journey-card rv"><span class="tag-pill">التشغيل</span><h3>إدارة أسهل</h3><p>استبدل الجداول والأدوات المتفرقة بمساحة عمل واحدة سريعة لكل فروعك.</p><a href="#modules" class="text-link">شاهد مساحة العمل <span>←</span></a></article>
-      <article class="journey-card rv"><span class="tag-pill">الذكاء</span><h3>قرارات مبنية على البيانات</h3><p>تابع الحضور والإيرادات والتجديدات والطاقة وأداء الفريق قبل تفاقم أي مشكلة.</p><a href="#cta" class="text-link">خطط لخطوتك القادمة <span>←</span></a></article>
-    </div>
-  </div>
-</section>
-
-<section id="stories" class="stories" aria-labelledby="stories-title">
-  <div class="wrap"><div class="sec-head rv"><span class="code">قصص أصحاب الجيمات</span><h2 id="stories-title">مصمم للعمل الحقيقي داخل الصالة.</h2><p>LogicFit يمنح الفرق النامية نظاما واضحا يمكن الاعتماد عليه كل يوم.</p></div>
-    <div class="stories-grid"><article class="story rv"><div class="story-mark">LF</div><p>«أصبح موظف الاستقبال يرى نفس قصة العضو التي يراها المدرب. توقفنا عن مطاردة الأرقام وبدأنا نتحرك بناء عليها.»</p><footer><b>أحمد · Top Gym</b><span>مالك الجيم</span></footer></article><article class="story rv"><div class="story-mark">LF</div><p>«التطبيق يحمل هويتنا ويجعل العضو يشعر أنه ينتمي إلينا، وليس إلى منصة عامة.»</p><footer><b>سارة · Pulse Studio</b><span>مديرة التشغيل</span></footer></article><article class="story rv"><div class="story-mark">LF</div><p>«من أول عميل محتمل حتى التجديد، كل خطوة واضحة. هذا غيّر طريقة عمل الفريق.»</p><footer><b>عمر · Titan Club</b><span>مالك الجيم</span></footer></article></div>
-  </div>
-</section>
-
-<section id="resources" class="resources" aria-labelledby="resources-title"><div class="wrap"><div class="sec-head rv"><span class="code">مصادر لأصحاب الجيمات</span><h2 id="resources-title">أفكار عملية لإدارة ونمو أفضل.</h2><p>أدلة مختصرة للمالكين والمديرين والمدربين لبناء جيم أقوى.</p></div><div class="resources-grid"><article class="resource-card rv"><span class="tag-pill">التشغيل</span><h3>كيف تجعل الاستقبال أكثر هدوءا</h3><p>حوّل الحضور والمتابعة والتجديدات إلى إيقاع يومي واضح وقابل للتكرار.</p><small>دليل LogicFit · ٦ دقائق</small></article><article class="resource-card rv"><span class="tag-pill">النمو</span><h3>املأ حصتك القادمة دون تخمين</h3><p>اربط العملاء المحتملين والطاقة والحضور والرسائل ليعرف فريقك الخطوة التالية.</p><small>دليل LogicFit · ٨ دقائق</small></article><article class="resource-card rv"><span class="tag-pill">التدريب</span><h3>نظام بسيط لتقدم الأعضاء</h3><p>امنح المدربين مكانا واحدا لبناء البرامج وإظهار التقدم الذي يصنعونه للأعضاء.</p><small>دليل LogicFit · ٥ دقائق</small></article></div></div></section>
-
-<section class="faq band" aria-labelledby="faq-title"><div class="wrap"><div class="sec-head rv"><span class="code">إجابات واضحة</span><h2 id="faq-title">بداية واضحة لفريقك.</h2></div><div class="faq-list"><details class="rv"><summary>هل أستطيع البدء بفرع واحد ثم التوسع؟</summary><p>نعم. ابدأ بموقع واحد ثم أضف الفروع والأدوار والصلاحيات من الحساب نفسه.</p></details><details class="rv"><summary>هل سيحمل تطبيق الأعضاء هوية الجيم؟</summary><p>نعم. الشعار والألوان والاسم وتجربة الأعضاء جاهزة للعمل بنظام White-label.</p></details><details class="rv"><summary>هل يمكن للفريق تجربة LogicFit قبل الالتزام؟</summary><p>ابدأ بالتجربة المجانية أو احجز عرضا مخصصا لطريقة تشغيل جيمك.</p></details></div></div></section>
-
-<section class="band">
-  <div class="wrap strip">
-    <div class="rv"><div class="n mono"><span data-count="9">0</span></div><div class="l">أنظمة متكاملة في واحد</div></div>
-    <div class="rv"><div class="n mono">∞</div><div class="l">فروع من حساب واحد</div></div>
-    <div class="rv"><div class="n mono"><span data-count="6">0</span></div><div class="l">أدوار بصلاحيات دقيقة</div></div>
-    <div class="rv"><div class="n">RTL</div><div class="l">عربي كامل، مصمّم له</div></div>
-  </div>
-</section>
-
-<section id="cta">
-  <div class="wrap">
-    <div class="final rv">
-      <span class="code" style="justify-content:center">جاهز؟</span>
-      <h2 style="margin-top:16px">شغّل جيمك من مكان واحد.</h2>
-      <p>ابدأ تجربة مجانية ١٤ يوم — فعّل جيمك، أضف فرعك الأول، وأطلق تطبيق أعضائك اليوم.</p>
-      <form class="lead-form" id="trialForm" novalidate><label class="sr-only" for="trialEmail">البريد الإلكتروني للعمل</label><input id="trialEmail" name="email" type="email" autocomplete="email" placeholder="البريد الإلكتروني للعمل" required><button class="btn btn-primary" type="submit">ابدأ التجربة المجانية →</button><small class="form-note">بدون بطاقة ائتمان · نرد خلال يوم عمل</small><span class="form-status" aria-live="polite"></span></form>
-      <div class="hero-actions"><button class="btn btn-ghost" type="button" data-open-demo>احجز عرضًا توضيحيًا</button></div>
-    </div>
-  </div>
-</section>
-
-<div class="modal" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoTitle"><div class="modal-backdrop" data-close-demo></div><div class="modal-card"><button class="modal-close" type="button" aria-label="إغلاق" data-close-demo>×</button><span class="code">تحدث مع المبيعات</span><h2 id="demoTitle">شاهد LogicFit داخل جيمك.</h2><p>أخبرنا قليلًا عن نشاطك وسنرتب لك عرضًا مركزًا.</p><form class="demo-form" id="demoForm" novalidate><label>اسم الجيم<input name="gym" type="text" required></label><label>البريد الإلكتروني<input name="email" type="email" required></label><label>عدد الفروع<select name="branches"><option>١</option><option>٢–٥</option><option>٦–٢٠</option><option>٢٠+</option></select></label><button class="btn btn-primary" type="submit">اطلب العرض</button><span class="form-status" aria-live="polite"></span></form></div></div>
-
-<footer>
-  <div class="wrap foot-in">
-    <div class="brand" style="font-size:1rem"><img class="brand-logo" src="../assets/brand/logicfit-dumbbell.svg" alt="شعار LogicFit">LogicFit</div>
-    <div>منصة إدارة الصالات الرياضية · صُممت للسوق العربي</div>
-    <div class="mono" style="font-size:.8rem">© 2026 LogicFit</div>
-  </div>
-</footer>
-
-<script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

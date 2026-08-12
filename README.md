@@ -104,6 +104,11 @@ the CRM contract is enabled.
 - **Add a language** — copy a page, set `<html lang dir>`, translate the content, and add
   a matching `html[lang="xx"]` font block in `style.css`.
 
+## Documentation
+
+التفاصيل الكاملة للصفحات والأقسام وكل تفاعل وعقد التخزين المحلي والاختبارات موجودة في
+[docs/COMPLETE-LANDING-DOCUMENTATION.md](docs/COMPLETE-LANDING-DOCUMENTATION.md).
+
 ---
 
 © 2026 LogicFit · Gym management platform.

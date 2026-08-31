@@ -318,6 +318,7 @@
 
     var cards = Array.prototype.slice.call(document.querySelectorAll([
       '.outcome-card',
+      '.feature-card',
       '.benefit-card',
       '.visual-card',
       '.role-tile',

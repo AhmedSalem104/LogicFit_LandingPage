@@ -22,11 +22,12 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="hero-shell" id="home">
     <nav class="nav-v2" aria-label="Primary navigation">
       <a class="nav-brand" href="#home" aria-label="LogicFit home">
         <span class="nav-brand-mark" aria-hidden="true">
-          <img src="assets/brand/logicfit-new-logo.png" alt="">
+          <img src="assets/brand/logicfit-new-logo.png" alt="" width="1254" height="1254">
         </span>
         <span class="nav-brand-copy">
           <strong>LOGIC<span>FIT</span></strong>
@@ -34,7 +35,7 @@
         </span>
       </a>
 
-      <div class="nav-links" id="navLinks">
+      <div class="nav-links" id="navLinks" aria-label="Section links">
         <a href="#platform">Platform</a>
         <a href="#features">Features</a>
         <a href="#solutions">Solutions</a>
@@ -57,14 +58,14 @@
         </button>
       </div>
 
-      <button class="menu-button" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" data-menu>
+      <button class="menu-button" type="button" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu" aria-controls="navLinks" aria-expanded="false" data-menu>
         <span></span><span></span><span></span>
       </button>
     </nav>
 
     <section class="hero-canvas">
       <div class="hero-media rv">
-        <img src="assets/figma-next/hero-athlete.png" alt="Athlete training inside a gym">
+        <img src="assets/figma-next/hero-athlete.png" alt="Athlete training inside a gym" width="700" height="700" fetchpriority="high">
         <div class="media-scrim"></div>
         <div class="hero-media-badge"><span class="live-dot" aria-hidden="true"></span><span>Live operations view</span></div>
         <div class="image-caption">
@@ -80,7 +81,7 @@
 
       <div class="hero-copy rv">
         <div class="hero-brand-lockup">
-          <span class="hero-brand-mark" aria-hidden="true"><img src="assets/brand/logicfit-new-logo.png" alt=""></span>
+          <span class="hero-brand-mark" aria-hidden="true"><img src="assets/brand/logicfit-new-logo.png" alt="" width="1254" height="1254"></span>
           <span class="hero-brand-copy"><strong>LOGIC<span>FIT</span></strong><small>SMART GYM MANAGEMENT</small></span>
         </div>
         <p class="section-kicker">THE OPERATING SYSTEM FOR MODERN GYMS</p>
@@ -100,7 +101,7 @@
     <div class="hero-scroll-cue" aria-hidden="true"><span></span><small>Scroll to explore</small></div>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="proof-strip" id="platform">
       <div class="wrap proof-strip-grid">
         <div class="proof-badge">14-day free trial</div>
@@ -241,8 +242,8 @@
         </div>
       </div>
       <div class="wrap showcase-frame rv">
-        <img class="showcase-light" src="assets/figma-next/web-app-showcase.png" alt="LogicFit web dashboard and mobile app mockup">
-        <img class="showcase-dark" src="assets/figma-next/web-app-showcase-dark.png" alt="LogicFit web dashboard and mobile app mockup in dark mode">
+        <img class="showcase-light" src="assets/figma-next/web-app-showcase.png" alt="LogicFit web dashboard and mobile app mockup" width="1248" height="690" loading="lazy" decoding="async">
+        <img class="showcase-dark" src="assets/figma-next/web-app-showcase-dark.png" alt="LogicFit web dashboard and mobile app mockup in dark mode" width="960" height="683" loading="lazy" decoding="async">
       </div>
       <div class="wrap benefit-grid showcase-benefits">
         <article class="benefit-card rv"><b>1</b><div><h3>Follow-up that keeps going</h3><p>Members see their plans and progress every day.</p></div></article>
@@ -258,15 +259,15 @@
         <p class="section-lead">From attendance to food to progress, LogicFit makes the member journey visible to your team and motivating for the member.</p>
         <div class="journey-grid">
           <article class="visual-card rv">
-            <img src="assets/figma-next/journey-training.png" alt="Organized training inside a gym">
+            <img src="assets/figma-next/journey-training.png" alt="Organized training inside a gym" width="736" height="1104" loading="lazy" decoding="async">
             <div><span>Organized training</span><h3>A workout ready in their daily schedule.</h3></div>
           </article>
           <article class="visual-card rv">
-            <img src="assets/figma-next/journey-nutrition.png" alt="Healthy meal in a nutrition plan">
+            <img src="assets/figma-next/journey-nutrition.png" alt="Healthy meal in a nutrition plan" width="736" height="1051" loading="lazy" decoding="async">
             <div><span>Balanced nutrition</span><h3>A meal that fits their goal and day.</h3></div>
           </article>
           <article class="visual-card rv">
-            <img src="assets/figma-next/journey-progress.png" alt="Member progress tracking">
+            <img src="assets/figma-next/journey-progress.png" alt="Member progress tracking" width="736" height="981" loading="lazy" decoding="async">
             <div><span>Continuous progress</span><h3>A result the member can see and trust.</h3></div>
           </article>
         </div>
@@ -290,7 +291,7 @@
     <section class="section story-section" id="success">
       <div class="wrap story-grid">
         <div class="story-photo rv">
-          <img src="assets/figma-next/story-gym.png" alt="Gym management team reviewing operations">
+          <img src="assets/figma-next/story-gym.png" alt="Gym management team reviewing operations" width="736" height="1051" loading="lazy" decoding="async">
           <span>Real operations story</span>
         </div>
         <div class="story-copy rv">
@@ -335,7 +336,7 @@
     <div class="wrap footer-grid">
       <div class="footer-brand">
         <a class="footer-brand-lockup" href="#home" aria-label="LogicFit home">
-          <span class="footer-brand-mark" aria-hidden="true"><img src="assets/brand/logicfit-new-logo.png" alt=""></span>
+          <span class="footer-brand-mark" aria-hidden="true"><img src="assets/brand/logicfit-new-logo.png" alt="" width="1254" height="1254"></span>
           <span class="footer-brand-copy"><strong>LOGIC<span>FIT</span></strong><small>SMART GYM MANAGEMENT</small></span>
         </a>
         <p>A unified fitness platform for members, coaches, and gyms.</p>

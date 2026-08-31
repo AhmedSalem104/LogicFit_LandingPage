@@ -22,11 +22,12 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">تخطى إلى المحتوى الرئيسي</a>
   <header class="hero-shell" id="home">
     <nav class="nav-v2" aria-label="التنقل الرئيسي">
       <a class="nav-brand" href="#home" aria-label="LogicFit الرئيسية">
         <span class="nav-brand-mark" aria-hidden="true">
-          <img src="../assets/brand/logicfit-new-logo.png" alt="">
+          <img src="../assets/brand/logicfit-new-logo.png" alt="" width="1254" height="1254">
         </span>
         <span class="nav-brand-copy">
           <strong>LOGIC<span>FIT</span></strong>
@@ -34,7 +35,7 @@
         </span>
       </a>
 
-      <div class="nav-links" id="navLinks">
+      <div class="nav-links" id="navLinks" aria-label="روابط الأقسام">
         <a href="#platform">المنصة</a>
         <a href="#features">المميزات</a>
         <a href="#solutions">الحلول</a>
@@ -57,14 +58,14 @@
         </button>
       </div>
 
-      <button class="menu-button" type="button" aria-label="فتح القائمة" aria-controls="navLinks" aria-expanded="false" data-menu>
+      <button class="menu-button" type="button" aria-label="فتح القائمة" data-label-open="فتح القائمة" data-label-close="إغلاق القائمة" aria-controls="navLinks" aria-expanded="false" data-menu>
         <span></span><span></span><span></span>
       </button>
     </nav>
 
     <section class="hero-canvas">
       <div class="hero-media rv">
-        <img src="../assets/figma-next/hero-athlete.png" alt="رياضي يتدرب داخل الجيم">
+        <img src="../assets/figma-next/hero-athlete.png" alt="رياضي يتدرب داخل الجيم" width="700" height="700" fetchpriority="high">
         <div class="media-scrim"></div>
         <div class="hero-media-badge"><span class="live-dot" aria-hidden="true"></span><span>تشغيل مباشر</span></div>
         <div class="image-caption">
@@ -80,7 +81,7 @@
 
       <div class="hero-copy rv">
         <div class="hero-brand-lockup">
-          <span class="hero-brand-mark" aria-hidden="true"><img src="../assets/brand/logicfit-new-logo.png" alt=""></span>
+          <span class="hero-brand-mark" aria-hidden="true"><img src="../assets/brand/logicfit-new-logo.png" alt="" width="1254" height="1254"></span>
           <span class="hero-brand-copy"><strong>LOGIC<span>FIT</span></strong><small>SMART GYM MANAGEMENT</small></span>
         </div>
         <p class="section-kicker">نظام تشغيل الجيمات الحديثة</p>
@@ -100,7 +101,7 @@
     <div class="hero-scroll-cue" aria-hidden="true"><span></span><small>اكتشف المنصة</small></div>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="proof-strip" id="platform">
       <div class="wrap proof-strip-grid">
         <div class="proof-badge">تجربة مجانية ١٤ يومًا</div>
@@ -241,8 +242,8 @@
         </div>
       </div>
       <div class="wrap showcase-frame rv">
-        <img class="showcase-light" src="../assets/figma-next/web-app-showcase.png" alt="واجهة LogicFit على الويب وتطبيق الموبايل">
-        <img class="showcase-dark" src="../assets/figma-next/web-app-showcase-dark.png" alt="واجهة LogicFit على الويب وتطبيق الموبايل في الوضع الداكن">
+        <img class="showcase-light" src="../assets/figma-next/web-app-showcase.png" alt="واجهة LogicFit على الويب وتطبيق الموبايل" width="1248" height="690" loading="lazy" decoding="async">
+        <img class="showcase-dark" src="../assets/figma-next/web-app-showcase-dark.png" alt="واجهة LogicFit على الويب وتطبيق الموبايل في الوضع الداكن" width="960" height="683" loading="lazy" decoding="async">
       </div>
       <div class="wrap benefit-grid showcase-benefits">
         <article class="benefit-card rv"><b>١</b><div><h3>متابعة لا تتوقف</h3><p>العضو يرى خطته وتقدمه كل يوم.</p></div></article>
@@ -258,15 +259,15 @@
         <p class="section-lead">من الحضور إلى الطعام إلى التقدم؛ LogicFit يجعل رحلة العضو مرئية لفريقك وملهمة له.</p>
         <div class="journey-grid">
           <article class="visual-card rv">
-            <img src="../assets/figma-next/journey-training.png" alt="تدريب منظم داخل الجيم">
+            <img src="../assets/figma-next/journey-training.png" alt="تدريب منظم داخل الجيم" width="736" height="1104" loading="lazy" decoding="async">
             <div><span>تدريب منظّم</span><h3>تمرين حاضر في جدول يومه.</h3></div>
           </article>
           <article class="visual-card rv">
-            <img src="../assets/figma-next/journey-nutrition.png" alt="وجبة صحية ضمن خطة التغذية">
+            <img src="../assets/figma-next/journey-nutrition.png" alt="وجبة صحية ضمن خطة التغذية" width="736" height="1051" loading="lazy" decoding="async">
             <div><span>تغذية متوازنة</span><h3>وجبة تناسب هدفه ويومه.</h3></div>
           </article>
           <article class="visual-card rv">
-            <img src="../assets/figma-next/journey-progress.png" alt="متابعة تقدم العضو">
+            <img src="../assets/figma-next/journey-progress.png" alt="متابعة تقدم العضو" width="736" height="981" loading="lazy" decoding="async">
             <div><span>تقدم مستمر</span><h3>نتيجة يراها العضو ويثق بها.</h3></div>
           </article>
         </div>
@@ -290,7 +291,7 @@
     <section class="section story-section" id="success">
       <div class="wrap story-grid">
         <div class="story-photo rv">
-          <img src="../assets/figma-next/story-gym.png" alt="إدارة جيم تتابع التشغيل اليومي">
+          <img src="../assets/figma-next/story-gym.png" alt="إدارة جيم تتابع التشغيل اليومي" width="736" height="1051" loading="lazy" decoding="async">
           <span>قصة تشغيل حقيقية</span>
         </div>
         <div class="story-copy rv">
@@ -335,7 +336,7 @@
     <div class="wrap footer-grid">
       <div class="footer-brand">
         <a class="footer-brand-lockup" href="#home" aria-label="LogicFit الرئيسية">
-          <span class="footer-brand-mark" aria-hidden="true"><img src="../assets/brand/logicfit-new-logo.png" alt=""></span>
+          <span class="footer-brand-mark" aria-hidden="true"><img src="../assets/brand/logicfit-new-logo.png" alt="" width="1254" height="1254"></span>
           <span class="footer-brand-copy"><strong>LOGIC<span>FIT</span></strong><small>SMART GYM MANAGEMENT</small></span>
         </a>
         <p>منصة لياقة موحّدة للمتدرب، المدرب والجيم.</p>

@@ -52,6 +52,7 @@ Then visit:
 - Next Gen hero
 - Social proof strip
 - Operating outcomes
+- 13 connected management capabilities
 - Web and mobile product showcase
 - Member journey visuals
 - Team roles
@@ -65,41 +66,39 @@ Then visit:
 - The Arabic page follows the Figma `landing.ar.next` structure; the English page mirrors
   the same layout and content hierarchy.
 - Shared behavior lives in `assets/js/main.js`: mobile menu, active navigation state,
-  scroll reveal, and theme switching.
+  scroll reveal, counters, lightweight pointer motion, and theme switching.
 - Light and dark themes use semantic token values from the Figma landing page.
-- The real Figma-exported LogicFit logo is stored under `assets/figma-next/` with separate
-  light and dark versions, plus a cropped `LF` favicon.
-- The "Your app. Your name." section has a live demo: tapping a brand swatch recolours
-  the member-app mock (`--brand` CSS variable) and swaps its name + logo initial.
+- The current brand mark is `assets/brand/logicfit-new-logo.png`; the original Figma
+  assets remain available under `assets/figma-next/`.
+- `Start free trial` links directly to the registration route at
+  `https://gym-membership-app-smoky.vercel.app/register-gym`.
 
-## Sections
+## Section flow
 
-Hero + live console → The problem → Nine systems → Training (results in numbers) →
-People visual proof → White-label app → Roles → Metrics strip → Call to action.
+Hero → proof metrics → operating outcomes → 13-capability inventory → product showcase
+→ member journey → role views → customer story → FAQ → call to action → footer.
 
 The visual proof section uses male-only gym photography, lazy loading, responsive
 cropping, hover transitions, and accessible alternative text. The same section is
 translated in `ar/index.html` and uses the shared RTL layout.
 
-The conversion flow is intentionally split: **Start free trial** uses a lightweight
-work-email capture form, while **Book a demo** opens a dedicated sales modal with gym
-name, email, and branch count. Both forms validate inline, keep the page in place, and
-store a local lead receipt for the next integration step (`logicfit_trial_lead` and
-`logicfit_demo_lead`). Replace that storage call with the production lead endpoint when
-the CRM contract is enabled.
+The current landing page does not contain a local lead form or sales modal. The primary
+conversion action is an external link to the registration route; the page itself does
+not create an account, tenant, subscription, or lead record.
 
 ## Accessibility and performance
 
-- Semantic sections, labelled navigation, descriptive image `alt` text, and keyboard-focusable controls.
-- `loading="lazy"` is used for below-the-fold photography; the hero remains CSS/vector-based for fast first paint.
+- Semantic sections, a skip link, labelled navigation, descriptive image `alt` text,
+  visible focus states, and keyboard-focusable controls.
+- `loading="lazy"`, `decoding="async"`, and intrinsic dimensions are used for below-the-fold imagery.
 - All animations respect `prefers-reduced-motion`.
 - No framework or runtime dependency is required; the page is deployable as static files.
 
 ## Customising
 
-- **Copy / colours per gym** — edit the swatch `data-c` / `data-name` / `data-i`
-  attributes in the white-label section.
-- **Brand accent** — change `--ember` in `assets/css/style.css` (both themes).
+- **Brand accent** — change the semantic color tokens in `assets/css/style.css` (both themes).
+- **Page copy** — edit the matching English and Arabic sections in `index.html` and
+  `ar/index.html` without changing their shared ids or routes.
 - **Add a language** — copy a page, set `<html lang dir>`, translate the content, and add
   a matching `html[lang="xx"]` font block in `style.css`.
 

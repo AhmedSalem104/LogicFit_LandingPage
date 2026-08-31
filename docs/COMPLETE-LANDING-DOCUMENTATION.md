@@ -11,9 +11,9 @@ Connection String أو API محمي.
 | `index.html` | الصفحة الإنجليزية، اتجاه LTR. |
 | `ar/index.html` | الصفحة العربية، اتجاه RTL، وهي النسخة الأساسية للسوق العربي. |
 | `assets/css/style.css` | Design system مشترك، الألوان، responsive، الوضع الداكن، والحركة. |
-| `assets/js/main.js` | التفاعلات المشتركة، الثيم، النماذج، العدادات، الرسم، والـdemo. |
+| `assets/js/main.js` | التفاعلات المشتركة، الثيم، القائمة، العدادات، الـreveal، والحركة الخفيفة. |
 | `assets/images/logicfit-dashboard.png` | أصل بصري للعرض التسويقي. |
-| `assets/brand/logicfit-dumbbell.svg` | العلامة البصرية. |
+| `assets/brand/logicfit-new-logo.png` | العلامة البصرية الحالية والـfavicon. |
 
 التشغيل لا يحتاج build أو dependencies:
 
@@ -29,20 +29,19 @@ python -m http.server 8000
 
 | المسار | اللغة | الحالة | الإجراء الرئيسي |
 |---|---|---|---|
-| `/` | English / LTR | صفحة تسويقية قابلة للعرض العام | Start free trial أو Book a demo |
+| `/` | English / LTR | صفحة تسويقية قابلة للعرض العام | Start free trial |
 | `/ar/` | العربية / RTL | نفس المحتوى مع ترجمة واتجاه عربي | ابدأ التجربة أو احجز عرضاً |
 
 الأقسام داخل كل صفحة مرتبة كالتالي:
 
-1. Hero وLive Console لإظهار قيمة المنتج والمؤشرات.
-2. المشكلة التي يحلها LogicFit.
-3. تسعة أنظمة تشغيلية.
-4. التدريب والنتائج الرقمية.
-5. People visual proof.
-6. White-label app مع تبديل العلامة.
-7. الأدوار: Owner وCoach وClient.
-8. Metrics strip.
-9. Call to action والنماذج.
+1. Hero وLive Operations View لإظهار قيمة المنتج والمؤشرات.
+2. Proof metrics وOperating Outcomes.
+3. كتالوج 13 قدرة تشغيلية.
+4. Web/Mobile Product Showcase.
+5. Member Journey: التدريب والتغذية والتقدم.
+6. أدوار الفريق: Owner وManager وCoach وReception.
+7. Customer Story وFAQ.
+8. Final CTA وFooter.
 
 ## 3. التدفق الوظيفي للمستخدم
 
@@ -50,15 +49,12 @@ python -m http.server 8000
 فتح الصفحة
   -> اختيار اللغة أو الثيم
   -> قراءة القيمة والأقسام
-  -> Start free trial أو Book a demo
-  -> تحقق inline من البيانات
-  -> حفظ lead receipt محلياً فقط
-  -> عرض رسالة نجاح داخل الصفحة
+  -> Start free trial
+  -> الانتقال إلى مسار التسجيل الخارجي
 ```
 
-الـLanding لا ينفذ تدفق التسجيل الحقيقي. عند تفعيل عقد CRM يجب استبدال الحفظ المحلي
-بطلب HTTPS إلى endpoint موثق، مع إبقاء معالجة loading/success/error وعدم إرسال بيانات
-إلى خادم غير معتمد.
+الـLanding لا ينفذ تدفق التسجيل الحقيقي ولا يحتوي حاليًا على Form أو Modal لتجميع
+بيانات العملاء. التسجيل يتم في التطبيق الخارجي عبر الرابط الموجود في أزرار الـCTA.
 
 ## 4. كل زر وتفاعل
 
@@ -67,34 +63,26 @@ python -m http.server 8000
 | Language switcher | ينتقل بين `/` و`/ar/` | لا يوجد تخزين خادم | رابط لغة غير موجود يعرض 404 من الاستضافة |
 | Theme button | يبدل `data-theme` على `<html>` | يقرأ تفضيل النظام ولا يحتاج API | fallback إلى الثيم الافتراضي |
 | Mobile menu | يفتح/يغلق القائمة ويغلقها عند اختيار رابط | حالة DOM فقط | يجب ألا يحجب keyboard focus |
-| Start free trial | يفتح/يظهر نموذج بريد العمل | `logicfit_trial_lead` في `localStorage` بعد النجاح المحلي | رسالة inline للبيانات الناقصة |
-| Book a demo | يفتح modal باسم الجيم والبريد وعدد الفروع | `logicfit_demo_lead` في `localStorage` بعد النجاح المحلي | لا يعيد تحميل الصفحة ويشرح الحقول الخاطئة |
-| Brand swatches | يغير `--brand` واسم/حرف الشعار في mock app | حالة عرض مؤقتة | يرجع للقيمة الافتراضية إذا كان الـattribute ناقصاً |
-| Scroll reveals/count-up/chart/bars | مؤثرات عرض غير تجارية | لا يوجد أثر بيانات | تتوقف أو تبسط عند `prefers-reduced-motion` |
+| Start free trial | ينتقل إلى مسار التسجيل الخارجي | لا يوجد تخزين محلي | يعتمد توفر المسار الخارجي |
+| Theme button | يبدل `data-theme` على `<html>` | تفضيل الثيم في `logicfit_theme` | fallback إلى تفضيل النظام |
+| Language switcher | ينتقل بين `/` و`/ar/` | لا يوجد تخزين خادم | رابط لغة غير موجود يعرض 404 من الاستضافة |
+| Mobile menu | يفتح/يغلق القائمة، ويدعم Escape والضغط خارجها | حالة DOM فقط | يغلق عند اختيار رابط أو تغيير breakpoint |
+| Scroll reveals/count-up/pointer motion | مؤثرات عرض فقط | لا يوجد أثر بيانات | تتوقف أو تتبسط عند `prefers-reduced-motion` |
 
 ## 5. عقد البيانات المحلي
 
-الحفظ الحالي ليس اشتراكاً ولا طلباً حقيقياً. هو Receipt محلي للعرض التجريبي فقط، ولا
-يجب اعتباره دليلاً على إنشاء حساب.
-
-```json
-{
-  "email": "prospect@example.com",
-  "createdAt": "ISO-8601 timestamp",
-  "source": "landing-page"
-}
-```
+لا تحفظ الصفحة بيانات عميل أو Lead. التخزين المحلي المستخدم حاليًا يقتصر على تفضيل
+الثيم (`logicfit_theme`). لا يمثل ذلك إنشاء حساب أو اشتراكًا.
 
 يحظر وضع Access Token أو كلمة مرور أو Connection String أو إثبات دفع في هذه الصفحة أو
-في `localStorage`. عند ربط CRM يجب توثيق request/response الجديد داخل مستودع الـBackend
-ومستودعي الواجهات في نفس التغيير.
+في `localStorage`. أي تكامل مستقبلي مع CRM يجب أن يمر عبر عقد API موثق.
 
 ## 6. التصميم والاستجابة
 
 - `style.css` هو مصدر التصميم المشترك للغتين.
 - `dir="ltr"` للإنجليزية و`dir="rtl"` للعربية.
 - الألوان معرفة كـCSS custom properties، مع light/dark theme.
-- الصور أسفل الصفحة lazy-loaded، والـhero لا يعتمد على تحميل صورة خارجية.
+- الصور أسفل الصفحة lazy-loaded مع `width`/`height`، وصورة الـhero ذات أولوية تحميل عالية.
 - كل الحركة تتبع `prefers-reduced-motion`.
 - يجب اختبار الهاتف، tablet، desktop، keyboard، focus، contrast، ونصوص العربية الطويلة.
 
@@ -112,9 +100,9 @@ API موثق مع validation وrate limiting وCORS مضبوط، وليس عبر
 | تبديل اللغة | انتقال صحيح مع الحفاظ على محتوى اللغة والاتجاه. |
 | فتح/غلق القائمة | يعمل بالماوس ولوحة المفاتيح ولا يخرج خارج الشاشة. |
 | تبديل الثيم | الألوان تتغير ولا تختفي النصوص أو الأزرار. |
-| نماذج trial/demo | تحقق inline، نجاح واضح، وعدم reload أو stack trace. |
-| إعادة فتح الصفحة | لا يظهر ادعاء إنشاء حساب من receipt المحلي. |
-| brand demo | يتغير الاسم واللون فقط داخل mock app. |
+| Start free trial | يفتح مسار التسجيل الخارجي دون تغيير في العقد المحلي. |
+| إعادة فتح الصفحة | لا يظهر ادعاء إنشاء حساب أو اشتراك من الصفحة. |
+| الصور والأصول | كل الأصول المحلية المستخدمة متاحة وتعود دون 404. |
 | reduced motion | لا توجد حركة إجبارية مزعجة. |
 | responsive/accessibility | لا overflow أفقي، focus مرئي، alt وlabels واضحة. |
 

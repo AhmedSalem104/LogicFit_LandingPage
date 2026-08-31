@@ -3,6 +3,7 @@
   'use strict';
 
   var root = document.documentElement;
+  root.classList.add('js');
   var isAr = root.lang === 'ar';
   var reduceQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   var reduce = reduceQuery.matches;
@@ -137,13 +138,21 @@
     navLinks.classList.remove('open');
     document.body.classList.remove('menu-open');
     menuButton.setAttribute('aria-expanded', 'false');
+    var closeLabel = menuButton.getAttribute('data-label-open');
+    if (closeLabel) menuButton.setAttribute('aria-label', closeLabel);
   }
 
   if (menuButton && navLinks) {
+    var initialLabel = menuButton.getAttribute('data-label-open');
+    if (initialLabel) menuButton.setAttribute('aria-label', initialLabel);
+
     menuButton.addEventListener('click', function () {
-      var open = navLinks.classList.toggle('open');
+      var open = !navLinks.classList.contains('open');
+      navLinks.classList.toggle('open', open);
       document.body.classList.toggle('menu-open', open);
       menuButton.setAttribute('aria-expanded', String(open));
+      var nextLabel = menuButton.getAttribute(open ? 'data-label-close' : 'data-label-open');
+      if (nextLabel) menuButton.setAttribute('aria-label', nextLabel);
     });
 
     navLinks.addEventListener('click', function (event) {
@@ -153,6 +162,21 @@
         setActiveNav(link.getAttribute('href'));
       }
       closeMenu();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape' || !navLinks.classList.contains('open')) return;
+      closeMenu();
+      menuButton.focus();
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!navLinks.classList.contains('open') || siteNav.contains(event.target)) return;
+      closeMenu();
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 920) closeMenu();
     });
   }
 
@@ -322,8 +346,6 @@
       '.benefit-card',
       '.visual-card',
       '.role-tile',
-      '.faq-card',
-      '.cta-card',
       '.dashboard-frame',
       '.showcase-frame',
       '.app-mock',

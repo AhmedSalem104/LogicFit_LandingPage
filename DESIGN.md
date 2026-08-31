@@ -12,7 +12,7 @@ This document is the local, AI-readable design source of truth for the LogicFit 
 
 ## Visual direction
 
-**Operational athletic premium.** LogicFit should feel like the control room behind a high-performing gym: precise, calm, and confident. The interface uses a dark operations masthead and capability showcase, then opens into quiet light surfaces for proof, outcomes, and the member journey.
+**Operational athletic premium.** LogicFit should feel like the control room behind a high-performing gym: precise, calm, and confident. The interface uses a themed operations masthead and capability showcase, then opens into quiet content surfaces for proof, outcomes, and the member journey.
 
 The direction borrows the useful qualities of premium automotive precision, athletic editorial confidence, and structured enterprise blue systems without copying any reference site. It avoids generic dashboard gradients, oversized marketing cards, and decorative chrome.
 
@@ -72,8 +72,8 @@ Use CSS custom properties from `assets/css/style.css`. Do not add one-off hex va
 
 ### Masthead and navigation
 
-- The nav is full-width and fixed for access, but its top state is transparent/gradient-matched to the dark hero so it reads as one masthead.
-- After scrolling it becomes a compact dark surface with a clearer bottom rule and shadow.
+- The nav is full-width and fixed for access, and its top state is visually matched to the active hero theme so it reads as one masthead.
+- After scrolling it becomes a compact themed surface with a clearer bottom rule and shadow.
 - Navigation labels map to real content sections: Platform, Features, Solutions, Success, Resources.
 - The active item is updated on click, hash navigation, and scroll. It has text, contrast, and a blue positional signal.
 - Keep language, login, trial, theme, and menu controls at 44px minimum touch height.
@@ -83,7 +83,7 @@ Use CSS custom properties from `assets/css/style.css`. Do not add one-off hex va
 
 - The hero is the thesis, not a generic centered title. Keep the operational image, live badge, metric, and direct trial action.
 - Use one primary CTA and one quieter discovery action.
-- Keep the first viewport visually connected: nav, background field, grid texture, and hero media share the same dark system.
+- Keep the first viewport visually connected: nav, background field, grid texture, and hero media share the same active theme system.
 
 ### Cards and capability inventory
 

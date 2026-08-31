@@ -87,6 +87,7 @@ Use CSS custom properties from `assets/css/style.css`. Do not add one-off hex va
 
 - Use cards to group a clear purpose: KPI, outcome, capability, role, or media story.
 - Prefer compact padding, one strong title, and one supporting sentence.
+- Capability cards use a large inline SVG as their visual anchor, with a restrained technical texture and accent-specific treatment instead of unrelated stock imagery.
 - Interactive cards receive a restrained transform/border response; static cards do not pretend to be clickable.
 - Icons are inline SVGs with one consistent stroke language. Emojis are not UI icons.
 

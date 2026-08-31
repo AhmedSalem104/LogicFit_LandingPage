@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/figma-next/favicon-lf.png">
+  <link rel="icon" type="image/png" href="assets/brand/logicfit-new-logo.png">
+  <meta name="theme-color" content="#1769E8">
   <script>
     (function () {
       try {
@@ -23,10 +24,28 @@
 <body>
   <header class="hero-shell" id="home">
     <nav class="nav-v2" aria-label="Primary navigation">
+      <a class="nav-brand" href="#home" aria-label="LogicFit home">
+        <span class="nav-brand-mark" aria-hidden="true">
+          <img src="assets/brand/logicfit-new-logo.png" alt="">
+        </span>
+        <span class="nav-brand-copy">
+          <strong>LOGIC<span>FIT</span></strong>
+          <small>SMART GYM MANAGEMENT</small>
+        </span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#platform">Platform</a>
+        <a href="#features">Features</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#success">Success</a>
+        <a href="#resources">Resources</a>
+      </div>
+
       <div class="nav-controls">
         <a class="nav-language" href="ar/index.html" hreflang="ar">AR</a>
         <a class="nav-login" href="#start">Log in</a>
-        <a class="btn btn-primary btn-nav" href="#start">Book a demo</a>
+        <a class="btn btn-primary btn-nav" href="https://gym-membership-app-smoky.vercel.app/register-gym" target="_blank" rel="noopener noreferrer">Start free trial</a>
         <button class="theme-toggle" type="button" aria-label="Switch to dark theme" data-theme-toggle data-label-dark="Switch to dark theme" data-label-light="Switch to light theme">
           <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path>
@@ -38,20 +57,6 @@
         </button>
       </div>
 
-      <div class="brand-links">
-        <a class="brand-logo" href="#home" aria-label="LogicFit home">
-          <img class="logo-light" src="assets/figma-next/logo-light.png" alt="LogicFit">
-          <img class="logo-dark" src="assets/figma-next/logo-dark.png" alt="LogicFit">
-        </a>
-        <div class="nav-links" id="navLinks">
-          <a href="#platform">Platform</a>
-          <a href="#features">Features</a>
-          <a href="#solutions">Solutions</a>
-          <a href="#success">Success</a>
-          <a href="#resources">Resources</a>
-        </div>
-      </div>
-
       <button class="menu-button" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" data-menu>
         <span></span><span></span><span></span>
       </button>
@@ -61,6 +66,7 @@
       <div class="hero-media rv">
         <img src="assets/figma-next/hero-athlete.png" alt="Athlete training inside a gym">
         <div class="media-scrim"></div>
+        <div class="hero-media-badge"><span class="live-dot" aria-hidden="true"></span><span>Live operations view</span></div>
         <div class="image-caption">
           <span>A stronger space for results</span>
           <strong>Every move is tracked. Every result is visible.</strong>
@@ -73,14 +79,21 @@
       </div>
 
       <div class="hero-copy rv">
-        <p class="section-kicker">LOGICFIT - smarter gym operations</p>
-        <h1>Every fitness journey<br>in one place.</h1>
-        <p>From a member's first check-in to the last report of the day, LogicFit makes operations easier, faster, and clearer for your team.</p>
+        <div class="hero-brand-lockup">
+          <span class="hero-brand-mark" aria-hidden="true"><img src="assets/brand/logicfit-new-logo.png" alt=""></span>
+          <span class="hero-brand-copy"><strong>LOGIC<span>FIT</span></strong><small>SMART GYM MANAGEMENT</small></span>
+        </div>
+        <p class="section-kicker">THE OPERATING SYSTEM FOR MODERN GYMS</p>
+        <h1>Run every part of your gym<br>from one intelligent workspace.</h1>
+        <p>From a member's first check-in to the last report of the day, LogicFit gives owners, managers, and coaches one clear view of the operation.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-large" href="https://gym-membership-app-smoky.vercel.app/register-gym">Start free trial</a>
+          <a class="btn btn-primary btn-large" href="https://gym-membership-app-smoky.vercel.app/register-gym" target="_blank" rel="noopener noreferrer">Start free trial</a>
           <a class="btn btn-secondary btn-large" href="#platform">Watch platform tour</a>
         </div>
-        <small>No credit card • Arabic setup and support • Multi-branch ready</small>
+        <div class="hero-proof-row" aria-label="LogicFit benefits">
+          <span><i aria-hidden="true"></i><strong>14</strong> connected capabilities</span>
+          <span><i aria-hidden="true"></i>No credit card required</span>
+        </div>
       </div>
     </section>
   </header>
@@ -145,72 +158,72 @@
 
         <div class="features-grid">
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">01</span><span class="feature-label">Memberships</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3.5 19c.5-3 2.3-4.5 5.5-4.5s5 1.5 5.5 4.5"></path><path d="M15 5.5a3 3 0 0 1 0 5.8M16 14.8c2.4.5 3.8 1.9 4.3 4.2"></path></svg></span><span class="feature-label">Memberships</span></div>
             <h3>Members &amp; subscriptions</h3>
             <p>Member profiles, renewals, freezes, payments, debts, and QR access in one place.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">02</span><span class="feature-label">Front desk</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 14h2v6h-2zM14 18h2v2h-2z"></path></svg></span><span class="feature-label">Front desk</span></div>
             <h3>Attendance &amp; check-in</h3>
             <p>QR check-ins, live occupancy, attendance history, and Kiosk Mode for reception.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">03</span><span class="feature-label">Finance</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"></circle><path d="M14.5 9.5c-.6-.6-1.4-.9-2.5-.9-1.4 0-2.4.7-2.4 1.7 0 2.7 4.9 1.1 4.9 3.7 0 1-.9 1.7-2.5 1.7-1.1 0-2-.3-2.7-1"></path><path d="M12 7.3v9.4"></path></svg></span><span class="feature-label">Finance</span></div>
             <h3>Finance &amp; payments</h3>
             <p>Collect payments, manage expenses and debts, issue receipts and refunds, and track financial reports.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">04</span><span class="feature-label">Operations</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 8 8-4 8 4-8 4-8-4Z"></path><path d="M4 8v8l8 4 8-4V8M12 12v8"></path></svg></span><span class="feature-label">Operations</span></div>
             <h3>POS &amp; inventory</h3>
             <p>Manage products, sales, suppliers, purchases, stock levels, and returns without spreadsheets.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">05</span><span class="feature-label">Coaching</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9v6M3.5 10.5v3M18 9v6M20.5 10.5v3M6 12h12"></path></svg></span><span class="feature-label">Coaching</span></div>
             <h3>Training &amp; nutrition</h3>
             <p>Create training programs, sessions, measurements, nutrition plans, and follow each member's progress.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">06</span><span class="feature-label">Library</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.5h9a3 3 0 0 1 3 3V20H8a3 3 0 0 0-3 0V4.5Z"></path><path d="M17 20h2V7.5a3 3 0 0 0-3-3"></path></svg></span><span class="feature-label">Library</span></div>
             <h3>Complete library</h3>
             <p>Search and filter exercises, muscles, and foods, then customize the library for each gym.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">07</span><span class="feature-label">Member experience</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"></rect><circle cx="12" cy="9" r="2"></circle><path d="M8.5 17c.4-2 1.6-3 3.5-3s3.1 1 3.5 3"></path></svg></span><span class="feature-label">Member experience</span></div>
             <h3>Member Portal</h3>
             <p>Members can follow subscriptions, attendance, payments, programs, receipts, and live gym occupancy.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">08</span><span class="feature-label">Visibility</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 16v-4M12 16V8M16 16v-6"></path></svg></span><span class="feature-label">Visibility</span></div>
             <h3>Dashboard &amp; analytics</h3>
             <p>See revenue, attendance, subscriptions, alerts, peak hours, and the operating metrics that matter.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">09</span><span class="feature-label">Brand</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 0 0 16h1.2a1.8 1.8 0 0 0 0-3.6H12a1.5 1.5 0 0 1 0-3h1.4A6.6 6.6 0 0 0 12 4Z"></path><circle cx="7.5" cy="10" r=".8"></circle><circle cx="10" cy="7.5" r=".8"></circle><circle cx="14" cy="7.5" r=".8"></circle></svg></span><span class="feature-label">Brand</span></div>
             <h3>Independent gym identity</h3>
             <p>Set your logo, colors, contact details, social accounts, and payment methods for a branded experience.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">10</span><span class="feature-label">Team access</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.3"></circle><path d="M3.5 19c.5-3 2.3-4.5 5.5-4.5s5 1.5 5.5 4.5M15 14.5c2.5.1 4.2 1.5 4.7 3.8"></path></svg></span><span class="feature-label">Team access</span></div>
             <h3>Users &amp; permissions</h3>
             <p>Give Owners and Assistants the exact access they need with detailed role permissions.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">11</span><span class="feature-label">Security</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.3-2.7 7.7-7 10-4.3-2.3-7-5.7-7-10V6l7-3Z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span class="feature-label">Security</span></div>
             <h3>Multi-tenant security</h3>
             <p>Keep every gym's data isolated with server-side permissions and row-level security (RLS).</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">12</span><span class="feature-label">Resilience</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .7-7.9A6 6 0 0 0 6.2 8.6 4.5 4.5 0 0 0 7 18Z"></path><path d="M12 11v6M9.5 14.5 12 17l2.5-2.5"></path></svg></span><span class="feature-label">Resilience</span></div>
             <h3>Backup &amp; recovery</h3>
             <p>Maintain independent backups, safe recovery paths, and audit logs for operational confidence.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">13</span><span class="feature-label">Platform</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4-8 4-8-4 8-4Z"></path><path d="m4 12 8 4 8-4M4 17l8 4 8-4"></path></svg></span><span class="feature-label">Platform</span></div>
             <h3>SaaS platform</h3>
             <p>Manage gyms, plans, trials, subscriptions, and usage from a dedicated Platform Admin view.</p>
           </article>
           <article class="feature-card rv">
-            <div class="feature-card-top"><span class="feature-index">14</span><span class="feature-label">Reporting</span></div>
+            <div class="feature-card-top"><span class="feature-index" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6zM14 3v4h4"></path><path d="M9 16v-3M12 16v-5M15 16v-2"></path></svg></span><span class="feature-label">Reporting</span></div>
             <h3>Reports &amp; export</h3>
             <p>Turn operational and financial data into printable reports and PDF-ready exports.</p>
           </article>
@@ -316,7 +329,7 @@
         <p class="section-kicker">Ready for a stronger start?</p>
         <h2>Run your gym from one place.<br>Build an experience worth returning to.</h2>
         <p>Start your 14-day LogicFit free trial, or book a demo focused on the way your gym runs.</p>
-        <a class="btn btn-primary btn-large" href="https://gym-membership-app-smoky.vercel.app/register-gym">Start free trial</a>
+        <a class="btn btn-primary btn-large" href="https://gym-membership-app-smoky.vercel.app/register-gym" target="_blank" rel="noopener noreferrer">Start free trial</a>
       </div>
     </section>
   </main>
@@ -324,9 +337,9 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
-        <a class="brand-logo" href="#home" aria-label="LogicFit home">
-          <img class="logo-light" src="assets/figma-next/logo-light.png" alt="LogicFit">
-          <img class="logo-dark" src="assets/figma-next/logo-dark.png" alt="LogicFit">
+        <a class="footer-brand-lockup" href="#home" aria-label="LogicFit home">
+          <span class="footer-brand-mark" aria-hidden="true"><img src="assets/brand/logicfit-new-logo.png" alt=""></span>
+          <span class="footer-brand-copy"><strong>LOGIC<span>FIT</span></strong><small>SMART GYM MANAGEMENT</small></span>
         </a>
         <p>A unified fitness platform for members, coaches, and gyms.</p>
       </div>

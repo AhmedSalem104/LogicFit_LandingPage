@@ -12,7 +12,7 @@ This document is the local, AI-readable design source of truth for the LogicFit 
 
 ## Visual direction
 
-**Operational athletic premium.** LogicFit should feel like the control room behind a high-performing gym: precise, calm, and confident. The interface uses a themed operations masthead and capability showcase, then opens into quiet content surfaces for proof, outcomes, and the member journey.
+**Operational athletic premium.** LogicFit should feel like the control room behind a high-performing gym: precise, calm, and confident. The interface uses a themed operations masthead and capability inventory, then opens into quiet content surfaces for proof, outcomes, and the member journey.
 
 The direction borrows the useful qualities of premium automotive precision, athletic editorial confidence, and structured enterprise blue systems without copying any reference site. It avoids generic dashboard gradients, oversized marketing cards, and decorative chrome.
 
@@ -84,6 +84,13 @@ Use CSS custom properties from `assets/css/style.css`. Do not add one-off hex va
 - The hero is the thesis, not a generic centered title. Keep the operational image, live badge, metric, and direct trial action.
 - Use one primary CTA and one quieter discovery action.
 - Keep the first viewport visually connected: nav, background field, grid texture, and hero media share the same active theme system.
+
+### Theme parity
+
+- Light mode uses light canvas, surfaces, cards, CTA, mobile CTA, and readable dark text throughout the page.
+- Dark mode uses the deep operational canvas and tonal dark surfaces throughout the page.
+- Photography and the blue primary action remain intentional brand elements in both modes; they are not accidental theme leaks.
+- Every featured card, hover state, focus state, and mobile surface has a Light and Dark treatment.
 
 ### Cards and capability inventory
 

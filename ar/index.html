@@ -81,7 +81,7 @@
 
       <div class="hero-copy rv">
         <p class="section-kicker">نظام تشغيل الجيمات الحديثة</p>
-        <h1>شغّل كل تفاصيل جيمك<br><span class="hero-highlight">من مساحة عمل ذكية واحدة.</span></h1>
+        <h1><span class="hero-keyword">شغّل كل تفاصيل جيمك</span><br><span class="hero-highlight">من مساحة عمل ذكية واحدة.</span></h1>
         <p>من أول دخول للعضو إلى آخر تقرير في نهاية اليوم، يمنح LogicFit المالك والمدير والمدرب رؤية واضحة لكل التشغيل.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-large" href="https://gym-membership-app-smoky.vercel.app/register-gym" target="_blank" rel="noopener noreferrer">ابدأ التجربة المجانية</a>
@@ -302,13 +302,34 @@
     <section class="section faq-section" id="resources">
       <div class="wrap faq-grid">
         <div class="faq-list">
-          <article class="faq-card featured rv">
-            <h3>هل يمكنني البدء بفرع واحد؟</h3>
-            <p>نعم، ثم أضف الفروع والأدوار والصلاحيات من نفس الحساب عندما تكون جاهزًا.</p>
+          <article class="faq-card featured rv is-open" data-faq-item>
+            <button class="faq-trigger" type="button" data-faq-trigger aria-expanded="true" aria-controls="faq-answer-1">
+              <span>هل يمكنني البدء بفرع واحد؟</span>
+              <span class="faq-trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-answer-1"><p>نعم، ثم أضف الفروع والأدوار والصلاحيات من نفس الحساب عندما تكون جاهزًا.</p></div>
           </article>
-          <article class="faq-card rv"><h3>هل تطبيق الأعضاء يحمل هوية جيمي؟</h3></article>
-          <article class="faq-card rv"><h3>هل توجد تجربة قبل الالتزام؟</h3></article>
-          <article class="faq-card rv"><h3>هل يدعم LogicFit العربية بالكامل؟</h3></article>
+          <article class="faq-card rv" data-faq-item>
+            <button class="faq-trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-answer-2">
+              <span>هل تطبيق الأعضاء يحمل هوية جيمي؟</span>
+              <span class="faq-trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-answer-2"><p>نعم. يمكنك تخصيص الشعار والألوان وبيانات التواصل والحسابات الاجتماعية ووسائل الدفع لتظهر التجربة بهوية جيمك.</p></div>
+          </article>
+          <article class="faq-card rv" data-faq-item>
+            <button class="faq-trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-answer-3">
+              <span>هل توجد تجربة قبل الالتزام؟</span>
+              <span class="faq-trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-answer-3"><p>نعم. ابدأ بتجربة مجانية لمدة ١٤ يومًا قبل اختيار الخطوة المناسبة لجيمك.</p></div>
+          </article>
+          <article class="faq-card rv" data-faq-item>
+            <button class="faq-trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-answer-4">
+              <span>هل يدعم LogicFit العربية بالكامل؟</span>
+              <span class="faq-trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-answer-4"><p>نعم. صُمم LogicFit للعربية والإنجليزية مع تجربة RTL كاملة.</p></div>
+          </article>
         </div>
         <div class="faq-copy rv">
           <p class="section-kicker">أسئلة واضحة قبل البداية</p>
@@ -327,6 +348,14 @@
       </div>
     </section>
   </main>
+
+  <aside class="mobile-cta" aria-label="ابدأ تجربتك المجانية">
+    <div class="mobile-cta-copy">
+      <strong>ابدأ تجربتك لمدة ١٤ يومًا</strong>
+      <span>مساحة عمل واحدة وواضحة لجيمك</span>
+    </div>
+    <a class="btn btn-primary" href="https://gym-membership-app-smoky.vercel.app/register-gym" target="_blank" rel="noopener noreferrer">ابدأ التجربة المجانية</a>
+  </aside>
 
   <footer class="site-footer">
     <div class="wrap footer-grid">

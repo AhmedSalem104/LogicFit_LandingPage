@@ -158,6 +158,30 @@
     if (current !== activeNavHash) setActiveNav(current);
   }
 
+  function initFaqAccordion() {
+    var faqTriggers = Array.prototype.slice.call(document.querySelectorAll('[data-faq-trigger]'));
+    if (!faqTriggers.length) return;
+
+    faqTriggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var item = trigger.closest('[data-faq-item]');
+        if (!item) return;
+
+        var shouldOpen = trigger.getAttribute('aria-expanded') !== 'true';
+        faqTriggers.forEach(function (otherTrigger) {
+          var otherItem = otherTrigger.closest('[data-faq-item]');
+          otherTrigger.setAttribute('aria-expanded', 'false');
+          if (otherItem) otherItem.classList.remove('is-open');
+        });
+
+        if (shouldOpen) {
+          trigger.setAttribute('aria-expanded', 'true');
+          item.classList.add('is-open');
+        }
+      });
+    });
+  }
+
   function closeMenu() {
     if (!menuButton || !navLinks) return;
     navLinks.classList.remove('open');
@@ -377,6 +401,7 @@
       '.app-mock',
       '.story-photo',
       '.live-insight',
+      '.floating-metric',
       '.proof-badge'
     ].join(',')));
 
@@ -470,6 +495,7 @@
 
   initHeroMotion();
   initTiltCards();
+  initFaqAccordion();
   initMagneticButtons();
   initRipples();
 

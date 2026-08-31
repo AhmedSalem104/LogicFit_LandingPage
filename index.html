@@ -81,7 +81,7 @@
 
       <div class="hero-copy rv">
         <p class="section-kicker">THE OPERATING SYSTEM FOR MODERN GYMS</p>
-        <h1>Run every part of your gym<br><span class="hero-highlight">from one intelligent workspace.</span></h1>
+        <h1><span class="hero-keyword">Run every part of your gym</span><br><span class="hero-highlight">from one intelligent workspace.</span></h1>
         <p>From a member's first check-in to the last report of the day, LogicFit gives owners, managers, and coaches one clear view of the operation.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-large" href="https://gym-membership-app-smoky.vercel.app/register-gym" target="_blank" rel="noopener noreferrer">Start free trial</a>
@@ -302,13 +302,34 @@
     <section class="section faq-section" id="resources">
       <div class="wrap faq-grid">
         <div class="faq-list">
-          <article class="faq-card featured rv">
-            <h3>Can I start with one branch?</h3>
-            <p>Yes. Add branches, roles, and permissions from the same account when you are ready.</p>
+          <article class="faq-card featured rv is-open" data-faq-item>
+            <button class="faq-trigger" type="button" data-faq-trigger aria-expanded="true" aria-controls="faq-answer-1">
+              <span>Can I start with one branch?</span>
+              <span class="faq-trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-answer-1"><p>Yes. Add branches, roles, and permissions from the same account when you are ready.</p></div>
           </article>
-          <article class="faq-card rv"><h3>Does the member app carry my gym identity?</h3></article>
-          <article class="faq-card rv"><h3>Is there a trial before committing?</h3></article>
-          <article class="faq-card rv"><h3>Does LogicFit fully support Arabic?</h3></article>
+          <article class="faq-card rv" data-faq-item>
+            <button class="faq-trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-answer-2">
+              <span>Does the member app carry my gym identity?</span>
+              <span class="faq-trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-answer-2"><p>Yes. Your logo, colors, contact details, social accounts, and payment methods can shape the member experience.</p></div>
+          </article>
+          <article class="faq-card rv" data-faq-item>
+            <button class="faq-trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-answer-3">
+              <span>Is there a trial before committing?</span>
+              <span class="faq-trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-answer-3"><p>Yes. Start with the 14-day free trial before choosing the right next step for your gym.</p></div>
+          </article>
+          <article class="faq-card rv" data-faq-item>
+            <button class="faq-trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-answer-4">
+              <span>Does LogicFit fully support Arabic?</span>
+              <span class="faq-trigger-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-answer-4"><p>Yes. LogicFit is designed for Arabic and English, including a dedicated RTL experience.</p></div>
+          </article>
         </div>
         <div class="faq-copy rv">
           <p class="section-kicker">Clear answers before you start</p>
@@ -327,6 +348,14 @@
       </div>
     </section>
   </main>
+
+  <aside class="mobile-cta" aria-label="Start your free trial">
+    <div class="mobile-cta-copy">
+      <strong>Start your 14-day trial</strong>
+      <span>One clear workspace for your gym</span>
+    </div>
+    <a class="btn btn-primary" href="https://gym-membership-app-smoky.vercel.app/register-gym" target="_blank" rel="noopener noreferrer">Start free trial</a>
+  </aside>
 
   <footer class="site-footer">
     <div class="wrap footer-grid">

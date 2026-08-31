@@ -6063,3 +6063,508 @@ body {
     transform: none;
   }
 }
+
+/* Premium rhythm, responsive sizing and purposeful interaction pass */
+:root {
+  --lf-section-space-desktop: clamp(120px, 9.5vw, 152px);
+  --lf-section-space-laptop: clamp(88px, 8.5vw, 112px);
+  --lf-section-space-tablet: clamp(76px, 10vw, 96px);
+  --lf-section-space-mobile: clamp(64px, 16vw, 80px);
+  --lf-card-padding: 24px;
+  --lf-card-radius: 16px;
+  --lf-motion-premium: 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.section,
+.features-section,
+.showcase-section,
+.journey-section,
+.story-section,
+.faq-section {
+  padding-block: var(--lf-section-space-desktop);
+  scroll-margin-top: var(--lf-anchor-offset);
+}
+
+.cta-section {
+  padding-block: 0 var(--lf-section-space-desktop);
+}
+
+.outcome-card,
+.benefit-card,
+.role-tile,
+.features-summary,
+.features-section .feature-card,
+.live-insight {
+  padding: var(--lf-card-padding);
+  border-radius: var(--lf-card-radius);
+}
+
+.outcome-card,
+.benefit-card,
+.role-tile,
+.features-summary,
+.live-insight {
+  transition: transform var(--lf-motion-premium), box-shadow var(--lf-motion-premium), border-color var(--lf-motion-premium);
+}
+
+.outcome-card:not(.tilt-card):hover,
+.benefit-card:not(.tilt-card):hover,
+.role-tile:not(.tilt-card):hover,
+.features-summary:hover {
+  transform: translateY(-4px);
+}
+
+html[data-theme="dark"] .outcome-card,
+html[data-theme="dark"] .benefit-card,
+html[data-theme="dark"] .role-tile,
+html[data-theme="dark"] .features-summary,
+html[data-theme="dark"] .live-insight {
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24), 0 0 34px rgba(23, 105, 232, 0.08);
+}
+
+.hero-keyword,
+.hero-highlight {
+  background: linear-gradient(112deg, #ffffff 4%, #dcecff 46%, #62a9ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.floating-metric.tilt-card,
+.live-insight.tilt-card {
+  transition: transform var(--lf-motion-premium), box-shadow var(--lf-motion-premium), border-color var(--lf-motion-premium);
+}
+
+.floating-metric.tilt-card:hover,
+.live-insight.tilt-card:hover {
+  --lift: -4px;
+}
+
+.nav-v2.is-scrolled {
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+  backdrop-filter: blur(12px) saturate(125%);
+}
+
+.faq-card {
+  min-height: 0;
+  padding: 0;
+  border-radius: var(--lf-card-radius);
+  overflow: hidden;
+  transition: transform var(--lf-motion-premium), box-shadow var(--lf-motion-premium), border-color var(--lf-motion-premium), background var(--lf-motion-premium);
+}
+
+.faq-card.featured,
+html[dir="rtl"] .faq-card {
+  min-height: 0;
+  padding: 0;
+}
+
+.faq-card::after {
+  display: none !important;
+  content: none !important;
+}
+
+.faq-card:hover,
+.faq-card.is-open {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--lf-action-primary-background) 38%, var(--lf-border-default));
+  box-shadow: 0 18px 38px rgba(18, 20, 23, 0.1), 0 0 0 4px rgba(23, 105, 232, 0.05);
+}
+
+html[data-theme="dark"] .faq-card:hover,
+html[data-theme="dark"] .faq-card.is-open {
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.32), 0 0 34px rgba(23, 105, 232, 0.12);
+}
+
+.faq-trigger {
+  width: 100%;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: start;
+  touch-action: manipulation;
+}
+
+.faq-trigger > span:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 0.98rem;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.faq-trigger:hover {
+  background: rgba(23, 105, 232, 0.05);
+}
+
+.faq-trigger:focus-visible {
+  outline: 0;
+  box-shadow: inset 0 0 0 3px rgba(23, 105, 232, 0.42);
+}
+
+.faq-trigger-icon {
+  position: relative;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid color-mix(in srgb, var(--lf-action-primary-background) 42%, var(--lf-border-default));
+  border-radius: 50%;
+  color: var(--lf-text-brand);
+}
+
+.faq-trigger-icon::before,
+.faq-trigger-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 1.5px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform var(--lf-motion-premium), opacity var(--lf-motion-premium);
+}
+
+.faq-trigger-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-card.is-open .faq-trigger-icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+html.js .faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows var(--lf-motion-premium), opacity 0.2s ease;
+}
+
+html.js .faq-answer p {
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 24px;
+  color: var(--lf-text-secondary);
+  font-size: 0.84rem;
+  line-height: 1.75;
+  transition: padding var(--lf-motion-premium);
+}
+
+html.js .faq-card.is-open .faq-answer {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+html.js .faq-card.is-open .faq-answer p {
+  padding-bottom: 24px;
+}
+
+.faq-card.featured .faq-trigger > span:first-child,
+.faq-card.featured .faq-answer p {
+  color: inherit;
+}
+
+.cta-card {
+  padding-inline: 32px;
+  border-radius: 24px;
+}
+
+.mobile-cta {
+  display: none;
+}
+
+@media (min-width: 1181px) {
+  .nav-v2 {
+    gap: 32px;
+  }
+
+  .nav-controls {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1180px) {
+  .nav-v2 {
+    gap: 20px;
+  }
+
+  .nav-controls {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    padding-inline: 8px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.25rem, 5.8vw, 4.45rem);
+    line-height: 1.02;
+  }
+
+  html[dir="rtl"] .hero-copy h1 {
+    line-height: 1.16;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section,
+  .features-section,
+  .showcase-section,
+  .journey-section,
+  .story-section,
+  .faq-section {
+    padding-block: var(--lf-section-space-laptop);
+  }
+
+  .cta-section {
+    padding-block: 0 var(--lf-section-space-laptop);
+  }
+
+  .outcome-card,
+  .benefit-card,
+  .role-tile,
+  .features-summary,
+  .features-section .feature-card,
+  .live-insight {
+    padding: 20px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.05rem, 7vw, 4.2rem);
+  }
+
+  html[dir="rtl"] .hero-copy h1 {
+    line-height: 1.16;
+  }
+}
+
+@media (max-width: 800px) {
+  .section,
+  .features-section,
+  .showcase-section,
+  .journey-section,
+  .story-section,
+  .faq-section {
+    padding-block: var(--lf-section-space-tablet);
+  }
+
+  .cta-section {
+    padding-block: 0 var(--lf-section-space-tablet);
+  }
+
+  .features-section .feature-card {
+    min-height: 232px;
+    padding: 20px;
+  }
+
+  .faq-trigger {
+    min-height: 68px;
+    padding-block: 20px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.85rem, 7.4vw, 3.9rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .section,
+  .features-section,
+  .showcase-section,
+  .journey-section,
+  .story-section,
+  .faq-section {
+    padding-block: var(--lf-section-space-mobile);
+  }
+
+  .cta-section {
+    padding-block: 0 76px;
+  }
+
+  .outcome-card,
+  .benefit-card,
+  .role-tile,
+  .features-summary,
+  .features-section .feature-card,
+  .live-insight,
+  .cta-card {
+    padding: 18px;
+    border-radius: var(--lf-card-radius);
+  }
+
+  .features-section .feature-card {
+    min-height: 0;
+  }
+
+  .hero-copy h1,
+  html[lang="en"] .hero-copy h1,
+  html[dir="rtl"] .hero-copy h1 {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(2.18rem, 9.4vw, 3.05rem);
+    line-height: 1.08;
+  }
+
+  html[dir="rtl"] .hero-copy h1 {
+    line-height: 1.2;
+  }
+
+  .hero-media {
+    height: clamp(300px, 92vw, 390px);
+  }
+
+  .floating-metric,
+  html[dir="rtl"] .floating-metric {
+    width: min(204px, calc(100% - 32px));
+    padding: 14px;
+  }
+
+  .faq-trigger {
+    min-height: 64px;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .faq-trigger > span:first-child {
+    font-size: 0.9rem;
+  }
+
+  html.js .faq-answer p {
+    padding-inline: 18px;
+    font-size: 0.79rem;
+  }
+
+  html.js .faq-card.is-open .faq-answer p {
+    padding-bottom: 18px;
+  }
+
+  body {
+    padding-bottom: 92px;
+  }
+
+  .mobile-cta {
+    position: fixed;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    left: 12px;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid rgba(126, 183, 255, 0.25);
+    border-radius: 18px;
+    background: rgba(2, 9, 19, 0.94);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32), 0 0 26px rgba(23, 105, 232, 0.12);
+    -webkit-backdrop-filter: blur(14px) saturate(125%);
+    backdrop-filter: blur(14px) saturate(125%);
+  }
+
+  .mobile-cta-copy {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+  }
+
+  .mobile-cta-copy strong,
+  .mobile-cta-copy span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-cta-copy strong {
+    color: #f5f9ff;
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .mobile-cta-copy span {
+    color: rgba(207, 224, 247, 0.68);
+    font-size: 0.65rem;
+    line-height: 1.35;
+  }
+
+  .mobile-cta .btn {
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding-inline: 13px;
+    border-radius: 12px;
+    font-size: 0.73rem;
+  }
+
+  body.menu-open .mobile-cta {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .wrap,
+  .hero-canvas {
+    width: min(calc(100vw - 24px), var(--lf-content-max));
+  }
+
+  .nav-v2 {
+    padding-inline: 10px;
+  }
+
+  .hero-copy h1,
+  html[lang="en"] .hero-copy h1,
+  html[dir="rtl"] .hero-copy h1 {
+    font-size: 2.08rem;
+  }
+
+  .mobile-cta {
+    right: 8px;
+    left: 8px;
+    gap: 7px;
+    padding: 8px;
+  }
+
+  .mobile-cta-copy strong {
+    font-size: 0.71rem;
+  }
+
+  .mobile-cta .btn {
+    padding-inline: 10px;
+    font-size: 0.68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .outcome-card,
+  .benefit-card,
+  .role-tile,
+  .features-summary,
+  .features-section .feature-card,
+  .live-insight,
+  .faq-card,
+  .faq-trigger-icon::before,
+  .faq-trigger-icon::after,
+  html.js .faq-answer,
+  html.js .faq-answer p,
+  .mobile-cta {
+    transition: none !important;
+  }
+
+  .outcome-card:not(.tilt-card):hover,
+  .benefit-card:not(.tilt-card):hover,
+  .role-tile:not(.tilt-card):hover,
+  .features-summary:hover,
+  .faq-card:hover,
+  .faq-card.is-open {
+    transform: none;
+  }
+}

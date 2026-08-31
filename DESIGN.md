@@ -62,6 +62,8 @@ Use CSS custom properties from `assets/css/style.css`. Do not add one-off hex va
 ### Spacing, radius, elevation
 
 - Base rhythm: 4px / 8px increments, exposed as `--lf-space-*`.
+- Main section rhythm: 120-152px on large desktop, 88-112px on laptop, 76-96px on tablet, and 64-80px on mobile. The rhythm intentionally contracts with the viewport instead of allowing desktop whitespace to overwhelm smaller screens.
+- Content cards use a shared 24px desktop inset, reducing to 20px on tablet and 18px on mobile; standard card radius is 16px and featured conversion surfaces may use 24px.
 - Radius roles: `--lf-radius-sm` for controls, `--lf-radius-md` for buttons and compact groups, `--lf-radius-lg` for content modules, `--lf-radius-xl` for hero media only.
 - Elevation roles: soft shadow for separation, card shadow only for interactive or featured media. The hero image is the strongest elevation on the page.
 - Do not stack a card inside a card unless the inner group represents an independent action or data set.
@@ -96,7 +98,8 @@ Use CSS custom properties from `assets/css/style.css`. Do not add one-off hex va
 - Proof is a rail, not a large card wall.
 - Features use a dense, scannable inventory with 13 real capabilities.
 - Showcase imagery is allowed to carry visual weight; supporting benefits stay compact.
-- FAQ uses clear progressive disclosure in content structure without inventing a backend interaction.
+- FAQ uses accessible progressive disclosure with one open answer at a time, keyboard-focusable triggers, and a reduced-motion-safe height transition.
+- Mobile adds a compact fixed trial action with safe-area spacing so the primary conversion remains reachable without hiding the final content.
 
 ## Responsive contract
 
@@ -105,7 +108,7 @@ Review at 1440, 1280, 1024, 768, 390, and 320px.
 - Desktop: full masthead, two-column hero, dense capability grid, balanced max-width of 1180px.
 - Laptop: reduce gaps and type before allowing overflow.
 - Tablet: collapse the hero to a deliberate single-column story and use the expandable nav below 920px.
-- Mobile: preserve hierarchy and touch comfort; make CTA controls full-width where useful; never squeeze desktop tables/cards into a narrow viewport.
+- Mobile: preserve hierarchy and touch comfort; make CTA controls full-width where useful; keep the sticky trial action within reach; never squeeze desktop tables/cards into a narrow viewport.
 - Minimum page width is 320px. No accidental horizontal scrolling.
 
 ## RTL contract

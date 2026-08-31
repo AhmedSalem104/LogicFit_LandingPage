@@ -94,6 +94,10 @@ not create an account, tenant, subscription, or lead record.
 - All animations respect `prefers-reduced-motion`.
 - No framework or runtime dependency is required; the page is deployable as static files.
 
+## Design source of truth
+
+The visual language for the landing page is documented in [`DESIGN.md`](DESIGN.md). It follows the reusable design-brief approach from [getdesign.md](https://getdesign.md/) and records the LogicFit direction, tokens, masthead behavior, responsive contract, RTL rules, motion, accessibility, and screen inventory. Read it before adding or restyling a page so the experience stays connected to the product rather than drifting into a generic template.
+
 ## Customising
 
 - **Brand accent** — change the semantic color tokens in `assets/css/style.css` (both themes).

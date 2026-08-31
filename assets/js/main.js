@@ -111,6 +111,16 @@
   var menuButton = document.querySelector('[data-menu]');
   var navLinks = document.getElementById('navLinks');
   var navItems = navLinks ? Array.prototype.slice.call(navLinks.querySelectorAll('a[href^="#"]')) : [];
+  var navSections = navItems.map(function (link) {
+    var selector = link.getAttribute('href');
+    return {
+      hash: selector,
+      target: selector ? document.querySelector(selector) : null
+    };
+  }).filter(function (item) {
+    return item.target;
+  });
+  var activeNavHash = null;
 
   function setActiveNav(hash) {
     var targetHash = hash || window.location.hash || '#home';
@@ -131,6 +141,21 @@
       navItems[0].classList.add('is-active');
       navItems[0].setAttribute('aria-current', 'location');
     }
+
+    activeNavHash = matched ? targetHash : (targetHash === '#home' && navItems.length ? navItems[0].getAttribute('href') : null);
+  }
+
+  function setActiveNavFromScroll() {
+    if (!navSections.length) return;
+
+    var marker = Math.min(Math.max(window.innerHeight * 0.28, 116), 260);
+    var current = navSections[0].hash;
+
+    navSections.forEach(function (item) {
+      if (item.target.getBoundingClientRect().top <= marker) current = item.hash;
+    });
+
+    if (current !== activeNavHash) setActiveNav(current);
   }
 
   function closeMenu() {
@@ -221,6 +246,7 @@
     var current = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
     scrollProgress.style.transform = 'scaleX(' + current + ')';
     if (siteNav) siteNav.classList.toggle('is-scrolled', window.scrollY > 18);
+    setActiveNavFromScroll();
     tickingScroll = false;
   }
 

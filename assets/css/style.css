@@ -411,15 +411,6 @@ html[data-theme="dark"] .logo-dark {
   transform: translateY(-1px);
 }
 
-.theme-toggle::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border: 1px solid color-mix(in srgb, var(--lf-border-default) 72%, transparent);
-  border-radius: 10px;
-  pointer-events: none;
-}
-
 .theme-icon {
   position: relative;
   z-index: 1;
